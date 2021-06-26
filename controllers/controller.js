@@ -9,7 +9,6 @@ const AccountControls = {
             .catch(err => res.status(500).json(err));
     },
     createAccount: function(req, res) {
-      console.log('\n createAccount hit',)
         Account
             .create(req.body)
             .then(dbModel => res.json(dbModel))
@@ -31,7 +30,7 @@ const AccountControls = {
     createCharacter: function(req, res) {
         Character
             .create(req.body)
-            .then(({ _id }) => db.Account.findOneAndUpdate({}, { $push: { characters: _id } }, { new: true }))
+            .then(({ _id }) => Account.findOneAndUpdate({}, { $push: { characters: _id } }))
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err))
     },

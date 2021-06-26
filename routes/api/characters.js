@@ -2,11 +2,11 @@ const router = require("express").Router();
 const AccountControls = require('../../controllers/controller');
 
 // add character
-// router.route("/newcharacter")
-//     .post(/* create new character controller */)
+router.route("/userID/:id/new")
+    .post(AccountControls.createCharacter)
     
 // update character
-// router.route("/character/:id")
-//     .put(/* update a character, controller */ )
+router.route("/character/:id")
+    .put(/* update a character, controller */ )
 
 module.exports = router
