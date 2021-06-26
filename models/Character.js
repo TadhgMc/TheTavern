@@ -38,4 +38,4 @@ const CharacterSchema = new Schema({
 
 const Character = mongoose.model("Character", CharacterSchema);
 
-export default Character;
+module.exports = Character;

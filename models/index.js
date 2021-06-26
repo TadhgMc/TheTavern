@@ -1,4 +1,7 @@
 //export default (shemas for user accounts and character creation details)
-import Account from './Account';
+const Account = require('./Account');
+const Character = require('./Character');
 
-export default Account;
+module.exports = Account, Character;
+
+
