@@ -5,8 +5,11 @@ const AccountControls = require('../../controllers/controller');
 router.route("/userID/:id/new")
     .post(AccountControls.createCharacter)
     
-// update character
-router.route("/character/:id")
-    .put(/* update a character, controller */ )
+// get character
+router.route("/:id")
+    .get(AccountControls.findCharacter)
 
+//update character
+router.route("/update/:id")
+    .put(AccountControls.updateCharacter)
 module.exports = router
