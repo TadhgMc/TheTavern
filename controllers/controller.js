@@ -2,6 +2,7 @@ const Account = require('../models/Account');
 const Character = require('../models/Character');
 
 const AccountControls = {
+    // account control
     findById: function(req, res) {
         Account
             .findById(req.params.id)
@@ -27,6 +28,7 @@ const AccountControls = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err));
     },
+    // character control
     createCharacter: function(req, res) {
         Character
             .create(req.body)
