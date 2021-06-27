@@ -7,6 +7,8 @@ router.route('/new')
 
 // get user info (for profile page)
 router.route("/:id")
-    .get(AccountControls.findById);
+    .get(AccountControls.findById)
+    .put(AccountControls.updateAccount)
+    .delete(AccountControls.removeAccount)
 
 module.exports = router
