@@ -8,6 +8,7 @@ router.route("/userID/:id/new")
 // get character
 router.route("/:id")
     .get(AccountControls.findCharacter)
+    .delete(AccountControls.removeCharacter)
 
 //update character
 router.route("/update/:id")

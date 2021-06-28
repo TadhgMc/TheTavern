@@ -43,12 +43,18 @@ const AccountControls = {
             .catch(err => res.status(500).json(err));
     },
     updateCharacter: function(req, res) {
-    Character
+        Character
             .findOneAndUpdate({_id: req.params.id}, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err));
     },
-    //removeCharacter:
+    removeCharacter: function(req,res) {
+        Character
+            .findById({_id: req.params.id})
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(500).json(err));
+    },
 }
 
 module.exports = AccountControls;
