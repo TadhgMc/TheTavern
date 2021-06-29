@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import Parent from './components/Parent'
 
 
 function App() {
   return (
     <Router>
-      <Nav />
+      <Parent/>
       <Switch>
         <Route exact path="/" component="" />
         <Route exact path="/profile" component="" />
