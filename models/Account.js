@@ -20,7 +20,7 @@ const accountSchema = new Schema({
         required: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
-    characters: [
+    Character: [
         {
             type: Schema.Types.ObjectId,
             ref: "Character"
