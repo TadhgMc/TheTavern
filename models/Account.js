@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
 
 const accountSchema = new Schema({
     username: {
@@ -11,7 +12,7 @@ const accountSchema = new Schema({
         type: String,
         trim: true,
         required: true,
-        validate: [({ length }) => length >= 6, "Password must be 8 characters or longer."]
+        validate: [({ length }) => length >= 8, "Password must be 8 characters or longer."]
     },
     email: {
         type: String,
@@ -26,6 +27,10 @@ const accountSchema = new Schema({
         }
     ]
 });
+
+accountSchema.methods.checkPassword = function(loginPw){
+    return bcrypt.compareSync(loginPw, this.password);
+}
 
 const Account = mongoose.model("Account", accountSchema);
 
