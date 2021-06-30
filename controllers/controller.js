@@ -1,5 +1,6 @@
 const Account = require('../models/Account');
 const Character = require('../models/Character');
+const bcrypt = require('bcrypt');
 
 const AccountControls = {
     // account control
@@ -9,9 +10,13 @@ const AccountControls = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err));
     },
-    createAccount: function(req, res) {
+    createAccount: async function(req, res) {
+        console.log('\n controller create req.body', req.body);
+        let newUserData = req.body;
+        newUserData.password = await bcrypt.hash(newUserData.password, 10)
+        console.log('\n controller create newUserData', newUserData);
         Account
-            .create(req.body)
+            .create(newUserData)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err));
     },
