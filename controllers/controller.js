@@ -11,10 +11,8 @@ const AccountControls = {
             .catch(err => res.status(500).json(err));
     },
     createAccount: async function(req, res) {
-        console.log('\n controller create req.body', req.body);
         let newUserData = req.body;
         newUserData.password = await bcrypt.hash(newUserData.password, 10)
-        console.log('\n controller create newUserData', newUserData);
         Account
             .create(newUserData)
             .then(dbModel => res.json(dbModel))

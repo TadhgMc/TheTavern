@@ -32,20 +32,6 @@ accountSchema.methods.checkPassword = function(loginPw){
     return bcrypt.compareSync(loginPw, this.password);
 }
 
-// accountSchema.pre('save', async function(newUserData){
-//     console.log('\n pre ~hook for bcrypt', newUserData)
-//     newUserData.password = await bcrypt.hash(newUserData.password, 10);
-//     return newUserData;
-// })
-
-// hooks: {
-//     async beforeCreate(newUserData) {
-//       newUserData.password = await bcrypt.hash(newUserData.password, 10);
-//       return newUserData;
-//     },
-//   },
-
-
 const Account = mongoose.model("Account", accountSchema);
 
 module.exports = Account;
