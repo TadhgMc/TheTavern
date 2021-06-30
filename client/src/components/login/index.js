@@ -25,7 +25,7 @@ const loginFormHandler = async (event) => {
 const Login = () => {
   return (
     <form>
-      <h1 class="h3 mb-3 fw-normal">Please log in</h1>
+      <h1 class="h3 mb-3 fw-normal">Please Login</h1>
       <div class="form-floating">
         <input type="email" class="form-control" id="email-login" placeholder="name@example.com"/>
         <label for="floatingInput">Email address</label>
@@ -34,7 +34,7 @@ const Login = () => {
         <input type="password" class="form-control" id="password-login" placeholder="Password"/>
         <label for="floatingPassword">Password</label>
       </div>
-      <button onClick={loginFormHandler} class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <button onClick={loginFormHandler} class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
     </form>
   )
 }
