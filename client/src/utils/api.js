@@ -28,4 +28,11 @@ export default {
     updateCharacter: function(charID, charChanges) {
         return axios.put(`/api/characters/${charID}`, charChanges);
     },
+    // log in and out routes
+    login: function(userDetails) {
+        return axios.post('/api/log/in', userDetails);
+    },
+    logout: function(){
+        return axios.post('/api/log/out');
+    }
 }
