@@ -68,15 +68,3 @@ const AccountControls = {
 }
 
 module.exports = AccountControls;
-
-// get all characters for an user
-// app.get("/populateduser", (req, res) => {
-//     db.User.find({})
-//       .populate("notes")
-//       .then(dbUser => {
-//         res.json(dbUser);
-//       })
-//       .catch(err => {
-//         res.json(err);
-//       });
-//   });
