@@ -3,6 +3,7 @@ import Child from "./Child";
 import Child2 from "./Child2";
 import Child3 from "./Child3";
 import Child4 from "./Child4";
+import Child5 from "./Child5";
 
 // Need to move class to models if this will be saved to DB.
 
@@ -17,11 +18,13 @@ export default class Parent extends React.Component {
         const child2 = <Child2/>
         const child3 = <Child3/>
         const child4 = <Child4/>
+        const child5 = <Child5/>
         return (
             child,
             child2,
             child3,
-            child4
+            child4,
+            child5
         );
     }
 }

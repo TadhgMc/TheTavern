@@ -30,22 +30,22 @@ export default class Child2 extends React.Component{
         return(
             <form>
             <label for="str"> Strength </label>
-            <input id="str" type="radio" onChange={this.handleChange} value={this.state.savingThrows.str}></input>
+            <input id="str" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.str}></input>
 
             <label for="dex"> Dexterity </label>
-            <input id="dex" type="radio" onChange={this.handleChange} value={this.state.savingThrows.dex}></input>
+            <input id="dex" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.dex}></input>
 
             <label for="con"> Constitution </label>
-            <input id="con" type="radio" onChange={this.handleChange} value={this.state.savingThrows.con}></input>
+            <input id="con" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.con}></input>
 
             <label for="int"> Intelligence </label>
-            <input id="int" type="radio" onChange={this.handleChange} value={this.state.savingThrows.int}></input>
+            <input id="int" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.int}></input>
 
             <label for="wis"> Wisdom </label>
-            <input id="wis" type="radio" onChange={this.handleChange} value={this.state.savingThrows.wis}></input>
+            <input id="wis" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.wis}></input>
 
             <label for="cha"> Charisma </label>
-            <input id="cha" type="radio" onChange={this.handleChange} value={this.state.savingThrows.cha}></input>
+            <input id="cha" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.cha}></input>
             </form>
         )
     }

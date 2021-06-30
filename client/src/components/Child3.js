@@ -42,56 +42,56 @@ export default class Child3 extends React.Component {
         return(
         <form>
             <label for="acrobatics"> Acrobatics </label>
-            <input id="acrobatics" type="radio" onChange={this.handleChange} value={this.state.skills.acrobatics}></input>
+            <input id="acrobatics" type="checkbox" onChange={this.handleChange} value={this.state.skills.acrobatics}></input>
 
             <label for="animalHandling"> Animal Handling </label>
-            <input id="animalHandling" type="radio" onChange={this.handleChange} value={this.state.skills.animalHandling}></input>
+            <input id="animalHandling" type="checkbox" onChange={this.handleChange} value={this.state.skills.animalHandling}></input>
 
             <label for="arcana"> Arcana </label>
-            <input id="arcana" type="radio" onChange={this.handleChange} value={this.state.skills.arcana}></input>
+            <input id="arcana" type="checkbox" onChange={this.handleChange} value={this.state.skills.arcana}></input>
             
 
             <label for="athletics"> Athletics </label>
-            <input id="athletics" type="radio" onChange={this.handleChange} value={this.state.skills.athletics}></input>
+            <input id="athletics" type="checkbox" onChange={this.handleChange} value={this.state.skills.athletics}></input>
 
             <label for="deception"> Deception </label>
-            <input id="deception" type="radio" onChange={this.handleChange} value={this.state.skills.deception}></input>
+            <input id="deception" type="checkbox" onChange={this.handleChange} value={this.state.skills.deception}></input>
 
             <label for="history"> History </label>
-            <input id="history" type="radio" onChange={this.handleChange} value={this.state.skills.history}></input>
+            <input id="history" type="checkbox" onChange={this.handleChange} value={this.state.skills.history}></input>
 
             <label for="insight"> Insight </label>
-            <input id="insight" type="radio" onChange={this.handleChange} value={this.state.skills.insight}></input>
+            <input id="insight" type="checkbox" onChange={this.handleChange} value={this.state.skills.insight}></input>
 
             <label for="intimidation"> Intimidation </label>
-            <input id="intimidation" type="radio" onChange={this.handleChange} value={this.state.skills.intimidation}></input>
+            <input id="intimidation" type="checkbox" onChange={this.handleChange} value={this.state.skills.intimidation}></input>
 
             <label for="medicine"> Medicine </label>
-            <input id="medicine" type="radio" onChange={this.handleChange} value={this.state.skills.medicine}></input>
+            <input id="medicine" type="checkbox" onChange={this.handleChange} value={this.state.skills.medicine}></input>
 
             <label for="nature"> Nature </label>
-            <input id="nature" type="radio" onChange={this.handleChange} value={this.state.skills.nature}></input>
+            <input id="nature" type="checkbox" onChange={this.handleChange} value={this.state.skills.nature}></input>
 
             <label for="perception"> Perception </label>
-            <input id="perception" type="radio" onChange={this.handleChange} value={this.state.skills.perception}></input>
+            <input id="perception" type="checkbox" onChange={this.handleChange} value={this.state.skills.perception}></input>
 
             <label for="performance"> Performance </label>
-            <input id="performance" type="radio" onChange={this.handleChange} value={this.state.skills.performance}></input>
+            <input id="performance" type="checkbox" onChange={this.handleChange} value={this.state.skills.performance}></input>
 
             <label for="persuasion"> Persuasion </label>
-            <input id="persuasion" type="radio" onChange={this.handleChange} value={this.state.skills.persuasion}></input>
+            <input id="persuasion" type="checkbox" onChange={this.handleChange} value={this.state.skills.persuasion}></input>
 
             <label for="religion"> Religion </label>
-            <input id="religion" type="radio" onChange={this.handleChange} value={this.state.skills.religion}></input>
+            <input id="religion" type="checkbox" onChange={this.handleChange} value={this.state.skills.religion}></input>
 
             <label for="slightOfHands"> Slight of Hands </label>
-            <input id="slightOfHands" type="radio" onChange={this.handleChange} value={this.state.skills.slightOfHands}></input>
+            <input id="slightOfHands" type="checkbox" onChange={this.handleChange} value={this.state.skills.slightOfHands}></input>
 
             <label for="stealth"> Stealth </label>
-            <input id="stealth" type="radio" onChange={this.handleChange} value={this.state.skills.stealth}></input>
+            <input id="stealth" type="checkbox" onChange={this.handleChange} value={this.state.skills.stealth}></input>
 
             <label for="survival"> Survival </label>
-            <input id="survival" type="radio" onChange={this.handleChange} value={this.state.skills.survival}></input>
+            <input id="survival" type="checkbox" onChange={this.handleChange} value={this.state.skills.survival}></input>
         </form>
         );
     }
