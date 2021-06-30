@@ -4,7 +4,6 @@ const Account = require('../../models/Account');
 router.post('/in', async (req, res) => {
     try {
       const dbUserData = await Account.findOne({email: req.body.email});
-      console.log('\n dbUserData login-out.js', dbUserData);
       if (!dbUserData) {
         res
           .status(400)

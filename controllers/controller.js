@@ -58,6 +58,19 @@ const AccountControls = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err));
     },
+    
 }
 
 module.exports = AccountControls;
+
+// get all characters for an user
+// app.get("/populateduser", (req, res) => {
+//     db.User.find({})
+//       .populate("notes")
+//       .then(dbUser => {
+//         res.json(dbUser);
+//       })
+//       .catch(err => {
+//         res.json(err);
+//       });
+//   });

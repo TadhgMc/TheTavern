@@ -10,7 +10,7 @@ export default {
         return axios.put(`/api/accounts/${userID}`, userChanges);
     },
     createUser: function(newAccount) {
-        return axios.post('api/accounts/new', newAccount);
+        return axios.post('/api/accounts/new', newAccount);
     },
     removeUser: function(userID) {
         return axios.delete(`/api/accounts/${userID}`)
@@ -28,4 +28,11 @@ export default {
     updateCharacter: function(charID, charChanges) {
         return axios.put(`/api/characters/${charID}`, charChanges);
     },
+    // log in and out routes
+    login: function(userDetails) {
+        return axios.post('/api/log/in', userDetails);
+    },
+    logout: function(){
+        return axios.post('/api/log/out');
+    }
 }
