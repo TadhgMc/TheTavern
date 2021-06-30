@@ -16,7 +16,7 @@ export default {
         return axios.delete(`/api/accounts/${userID}`)
     },
     populateCharacters: function(userID) {
-        return axios.get(`/api/all/${userID}`);
+        return axios.get(`/api/accounts/all/${userID}`);
     },
     // character routes
     createCharacter: function(userID, newCharacter) {
