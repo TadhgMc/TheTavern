@@ -10,7 +10,7 @@ export default {
         return axios.put(`/api/accounts/${userID}`, userChanges);
     },
     createUser: function(newAccount) {
-        return axios.post('api/accounts/new', newAccount);
+        return axios.post('/api/accounts/new', newAccount);
     },
     removeUser: function(userID) {
         return axios.delete(`/api/accounts/${userID}`)
