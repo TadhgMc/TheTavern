@@ -10,7 +10,7 @@ class Vitals {
     }
 }
 
-export default class Child6 extends React.Component {
+export default class Vitality extends React.Component {
     constructor(props) {
         super(props)
         this.state = {vitals: new Vitals("", "", "", "", "")}

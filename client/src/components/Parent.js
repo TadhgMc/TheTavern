@@ -1,15 +1,15 @@
 import React from "react";
-import Child from "./Child";
-import Child2 from "./Child2";
-import Child3 from "./Child3";
-import Child4 from "./Child4";
-import Child5 from "./Child5";
-import Child6 from "./Child6";
-import Child7 from "./Child7";
-import Child8 from "./Child8";
-import Child9 from "./Child9";
-import Child10 from "./Child10";
-import Child11 from "./Child11";
+import Abilities from "./Abilities";
+import SaveThrow from "./SaveThrow";
+import Skill from "./Skill";
+import CharInfo from "./CharInfo";
+import Personality from "./Personality";
+import Vitality from "./Vitality";
+import Equipment from "./Equipment";
+import Attacks from "./Attacks";
+import Language from "./Language";
+import Features from "./Features";
+import Spells from "./Spells";
 
 
 // Need to move class to models if this will be saved to DB.
@@ -21,30 +21,30 @@ export default class Parent extends React.Component {
     }
     
     render() {
-        const child = <Child/>
-        const child2 = <Child2/>
-        const child3 = <Child3/>
-        const child4 = <Child4/>
-        const child5 = <Child5/>
-        const child6 = <Child6/>
-        const child7 = <Child7/>
-        const child8 = <Child8/>
-        const child9 = <Child9/>
-        const child10 = <Child10/>
-        const child11 = <Child11/>
+        const charInfo = <CharInfo/>
+        const abilities = <Abilities/>
+        const saveThrow = <SaveThrow/>
+        const skills = <Skill/>
+        const personality = <Personality/>
+        const vitality = <Vitality/>
+        const equipment = <Equipment/>
+        const attacks = <Attacks/>
+        const languages = <Language/>
+        const features = <Features/>
+        const spells = <Spells/>
 
         return (
-            child,
-            child2,
-            child3,
-            child4,
-            child5,
-            child6,
-            child7,
-            child8,
-            child9,
-            child10,
-            child11
+            charInfo,
+            abilities,
+            saveThrow,
+            skills,
+            personality,
+            vitality,
+            equipment,
+            attacks,
+            languages,
+            features,
+            spells
         );
     }
 }

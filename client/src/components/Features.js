@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-export default class Child10 extends React.Component {
+export default class Features extends React.Component {
     state = {features: [""]}
     
     handleInputChange(event) {

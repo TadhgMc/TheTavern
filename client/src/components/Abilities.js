@@ -11,7 +11,7 @@ class AbilityScore {
     }
 }
 
-export default class Child extends React.Component {
+export default class Abilities extends React.Component {
     constructor(props) {
       super(props);
       this.state = {abilityScores: new AbilityScore("", "", "", "", "", "")};

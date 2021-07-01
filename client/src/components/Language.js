@@ -2,31 +2,31 @@ import React from 'react'
 
 
 
-export default class Child8 extends React.Component {
-    state = {attacks: [""]}
+export default class Language extends React.Component {
+    state = {languages: [""]}
     
     handleInputChange(event) {
-        const state = this.state.attacks
+        const state = this.state.languages
         state.push(event.target.value)
-        this.setState({attacks: state})
+        this.setState({languages: state})
     }
 
     handleChange(event, index) {
-        const state = this.state.attacks.slice()
+        const state = this.state.languages.slice()
         state[index] = event.target.value
-        this.setState({attacks: state})
+        this.setState({languages: state})
     }
 
     handleAddFields() {
-        const state = this.state.attacks
+        const state = this.state.languages
         state.push("")
-        this.setState({attacks: state})
+        this.setState({languages: state})
       };
 
       handleRemoveFields(index) {
-        const state = this.state.attacks
+        const state = this.state.languages
         state.splice(index, 1)
-        this.setState({attacks: state})
+        this.setState({languages: state})
       };
 
       
@@ -35,16 +35,16 @@ export default class Child8 extends React.Component {
         return( 
             <form>
                 <div className="form-row">
-                    {this.state.attacks.map((attacks, index) => (
+                    {this.state.languages.map((languages, index) => (
                     <div className="form-group col-sm-6">
-                        <label htmlFor="attacks">Attacks</label>
+                        <label htmlFor="languages">Languages</label>
                         <input
                         type="text"
                         className="form-control"
-                        id="attacks"
-                        name="attacks"
+                        id="languages"
+                        name="laguages"
                         onChange = {event => this.handleChange(event, index)}
-                        value={attacks}
+                        value={languages}
                         />
                     <button className="btn btn-link" type="button" onClick={() => this.handleRemoveFields(index)}> Delete </button>
                     </div>

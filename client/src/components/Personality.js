@@ -9,7 +9,7 @@ class Background {
     }
 }
 
-export default class Child5 extends React.Component {
+export default class Personality extends React.Component {
     constructor (props) {
         super(props)
         this.state = {background: new Background("", "", "", "",)}
