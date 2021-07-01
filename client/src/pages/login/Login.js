@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
@@ -36,7 +37,8 @@ const Login = () => {
         <label for="floatingPassword">Password</label>
       </div>
       <button onClick={loginFormHandler} className="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-      <h3 className="h3 mb-3 fw-normal">Don't Have An Account? Click <Link to="/signup">Here</Link></h3>
+      <h3 className="h3 mb-3 fw-normal">Don't Have An Account? Sign Up <a href="/signup" role="button"><Link to='/signup'>Here</Link></a></h3>
+
     </form>
   )
 }
