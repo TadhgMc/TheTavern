@@ -9,6 +9,9 @@ router.route('/new')
 router.route("/:id")
     .get(AccountControls.findById)
     .put(AccountControls.updateAccount)
-    .delete(AccountControls.removeAccount)
+    .delete(AccountControls.removeAccount);
+
+router.route("/all/:id")
+    .get(AccountControls.populateCharacters);
 
 module.exports = router

@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = props => {
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">The Tavern</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3" style = {{margin: "0vw 1vw 5vw 1vw"}}>
+      <a className="navbar-brand" href="/">
+        <span className="">The Tavern</span>
+      </a>
+      <button className="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTavern" aria-controls="navbarTavern" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation" onClick={handleNavCollapse}>
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <a className="nav-item nav-link active" href="#">Login</a>
-          <a className="nav-item nav-link" href="#">Characters</a>
-          <a className="nav-item nav-link" href="#">Profile</a>
-        </div>
+
+      <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTavern">
+        <a className="nav-link text-dark" href="/login">Login</a>
+        <a className="nav-link text-dark" href="/characters">Characters</a>
+        <a className="nav-link text-dark" href="/profile">Profile</a>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

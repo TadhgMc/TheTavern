@@ -10,7 +10,7 @@ class Information {
     }
 }
 
-export default class Child4 extends React.Component {
+export default class CharInfo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {information: new Information("", "", "", "", "")}

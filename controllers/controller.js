@@ -35,7 +35,7 @@ const AccountControls = {
     createCharacter: function(req, res) {
         Character
             .create(req.body)
-            .then(({ _id }) => Account.findOneAndUpdate({}, { $push: { characters: _id } }))
+            .then(({ _id }) => Account.findOneAndUpdate({_id: req.params.id}, { $push: { Character: _id } }))
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err))
     },
@@ -58,6 +58,13 @@ const AccountControls = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(500).json(err));
     },
+    populateCharacters: function(req, res) {
+        Account
+            .findById({_id: req.params.id})
+            .populate("Character")
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(500).json(err));
+    }
 }
 
 module.exports = AccountControls;
