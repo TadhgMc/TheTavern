@@ -6,7 +6,7 @@ const Navbar = props => {
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3" style = {{margin: "0vw 1vw 5vw 1vw"}}>
       <a className="navbar-brand" href="/">
         <span className="">The Tavern</span>
       </a>
@@ -15,9 +15,9 @@ const Navbar = props => {
       </button>
 
       <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTavern">
-        <a className="nav-link" href="/login">Login</a>
-        <a className="nav-link" href="/characters">Characters</a>
-        <a className="nav-link" href="/profile">Profile</a>
+        <a className="nav-link text-dark" href="/login">Login</a>
+        <a className="nav-link text-dark" href="/characters">Characters</a>
+        <a className="nav-link text-dark" href="/profile">Profile</a>
       </div>
     </nav>
   );
