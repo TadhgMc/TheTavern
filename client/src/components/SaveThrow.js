@@ -11,7 +11,7 @@ class SavingThrows {
     }   
 }
 
-export default class Child2 extends React.Component{
+export default class SaveThrow extends React.Component{
     constructor(props) {
         super(props)
         this.state = {savingThrows: new SavingThrows("", "", "", "", "", "")}

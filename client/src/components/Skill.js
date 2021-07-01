@@ -23,7 +23,7 @@ class Skills {
     }
 }
 
-export default class Child3 extends React.Component {
+export default class Skill extends React.Component {
     constructor(props) {
         super(props);
         this.state = {skills: new Skills("","","","","","","","","","","","","","","","","","",)}
