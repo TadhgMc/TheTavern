@@ -1,30 +1,26 @@
-import React from 'react'
-// import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = props => {
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className="container-fluid">
-      <a className="navbar-brand" href ="/">The Tavern</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
+      <a className="navbar-brand" href="/">
+        <span className="">The Tavern</span>
+      </a>
+      <button className="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTavern" aria-controls="navbarTavern" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation" onClick={handleNavCollapse}>
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link active" href ="/login">Login</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link active" href ="/characters">Characters</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link active" href = "/profile">Profile</a>
-          </li>
-        </ul>
-      </div>
+
+      <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTavern">
+        <a className="nav-link" href="/login">Login</a>
+        <a className="nav-link" href="/characters">Characters</a>
+        <a className="nav-link" href="/profile">Profile</a>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
