@@ -50,7 +50,7 @@ export default class Spells extends React.Component {
                     </div>
                     ))}
                     <button className="btn btn-link" type="button" onClick={() => this.handleAddFields()}> Add </button>
-                </div>    
+                </div>
             </form>    
         )
     }

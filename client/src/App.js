@@ -12,7 +12,7 @@ import Homepage from "./pages/homepage/Homepage";
 function App() {
   return (
     <BrowserRouter>
-      <Parent />
+      <Parent/>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Homepage} />
