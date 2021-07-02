@@ -5,7 +5,7 @@ import Parent from './components/Parent'
 import Navbar from "./components/navbar/index";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
-import Homepage from "./pages/homepage/Homepage";
+import LandingPage from "./pages/landingpage/Landingpage";
 
 
 
@@ -15,7 +15,7 @@ function App() {
       <Parent />
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Homepage} />
+        <Route exact path="/" component={LandingPage} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
 
