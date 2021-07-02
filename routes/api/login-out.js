@@ -5,7 +5,9 @@ router.post('/in', async (req, res) => {
     try {
       const dbUserData = await Account.findOne({email: req.body.email});
       if (!dbUserData) {
+        alert("username or password didnt match")
         res
+          
           .status(400)
           .json({ message: 'Incorrect email or password. Please try again!' });
         return;
