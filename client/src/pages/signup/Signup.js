@@ -14,9 +14,7 @@ const signupFormSubmit = (event) => {
   if (password !== passwordValidation) {
     alert('Passwords must match')
   } else {
-    console.log("/n username outside if", username)
     if (username && email && password) {
-      console.log(username)
       API.createUser({
         username: username,
         password: password,
