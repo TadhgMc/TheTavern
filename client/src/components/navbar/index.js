@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 
-const Navbar = props => {
+const Navbar = (req) => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+  if (req.session.loggedIn) {
+    setIsLoggedIn(true);
+  } else {
+    setIsLoggedIn(false)
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3" style = {{margin: "0vw 1vw 5vw 1vw"}}>
@@ -15,6 +22,17 @@ const Navbar = props => {
       </button>
 
       <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTavern">
+        {
+        isLoggedIn
+        ?(<a className="nav-link text-dark" href="/login">Logout</a>
+          )
+        : 
+          (<a className="nav-link text-dark" href="/login">Login</a>
+          ) 
+        }
+        
+        <a className="nav-link text-dark" href="/login">Logout</a>
+
         <a className="nav-link text-dark" href="/login">Login</a>
         <a className="nav-link text-dark" href="/characters">Characters</a>
         <a className="nav-link text-dark" href="/profile">Profile</a>
