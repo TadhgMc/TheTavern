@@ -20,7 +20,7 @@ const signupFormSubmit = (event) => {
         password: password,
         email: email
       })
-      .then(res => console.log("signup complete"))
+      .then(console.log("signup complete"))
       .catch(err => console.log(err));
     } 
     
