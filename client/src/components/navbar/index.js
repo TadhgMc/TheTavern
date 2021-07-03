@@ -13,7 +13,7 @@ const Navbar = (req) => {
   } */
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3" style = {{margin: "0vw 1vw 5vw 1vw"}}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3">
       <a className="navbar-brand" href="/">
         <span className="">The Tavern</span>
       </a>
