@@ -21,18 +21,22 @@ const loginFormHandler = (event) => {
 
 const Login = () => {
   return (
-    <form>
-      <h1 className="h3 mb-3 fw-normal">Please Login</h1>
-      <div className="form-floating">
+    <form className = "container" >
+      <div className = "row mb-3" style = {{margin: "15vw 0vw 15vw 0vw"}}>
+      <h1 className="h3 mb-3 fw-normal text-center">Please Login</h1>
+      <div className="form-floating row mb-3">
         <input type="email" className="form-control" id="email-login" placeholder="name@example.com"/>
         <label for="floatingInput">Email address</label>
       </div>
-      <div className="form-floating">
+      <div className="form-floating row mb-3">
         <input type="password" className="form-control" id="password-login" placeholder="Password"/>
         <label for="floatingPassword">Password</label>
       </div>
-      <button onClick={loginFormHandler} className="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-      <h3 className="h3 mb-3 fw-normal">Don't Have An Account? Sign Up <a href="/signup" role="button"><Link to='/signup'>Here</Link></a></h3>
+      <div className = "text-center">
+        <button onClick={loginFormHandler} className="w-50 btn btn-lg btn-primary" type="submit">Login</button>
+        <h3 className="h3 mb-3 fw-normal text-center">Don't Have An Account? Sign Up <a href="/signup" role="button"><Link to='/signup'>Here</Link></a></h3>
+      </div>
+      </div>
 
     </form>
   )
