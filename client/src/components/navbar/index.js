@@ -6,11 +6,11 @@ const Navbar = (req) => {
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
-  if (req.session.loggedIn) {
+  /* if (req.session.loggedIn) {
     setIsLoggedIn(true);
   } else {
     setIsLoggedIn(false)
-  }
+  } */
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3" style = {{margin: "0vw 1vw 5vw 1vw"}}>
