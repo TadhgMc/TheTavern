@@ -29,6 +29,7 @@ export default class Spells extends React.Component {
         this.setState({spells: state})
       };
 
+
       
 
     render() {
