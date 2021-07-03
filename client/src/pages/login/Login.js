@@ -15,7 +15,7 @@ const loginFormHandler = (event) => {
       email: email,
       password: password
     })
-    .then(document.location.replace('/'))
+    .then(document.location.replace('/profile'))
   }
 };
 
