@@ -1,0 +1,8 @@
+.card {
+  width: 20rem;
+  display: flex;
+}
+
+#delete-character {
+  color: red;
+}

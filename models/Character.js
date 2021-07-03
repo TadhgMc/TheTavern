@@ -7,9 +7,18 @@ const CharacterSchema = new Schema({
     race: String,
     class: String,
     level: Number,
-    HP: {
-      currentHP: Number,
-      hitDie: {total: Number, die: String,},
+    vitals:{
+      ac: Number,
+      hp: {
+        currentHP: Number,
+        hitDie: {
+          total: Number,
+          die: String,
+        },
+      },
+      init: Number,
+      speed: Number,
+      profBonus: Number,
     },
     background: String,
     alignment: String,
@@ -26,7 +35,6 @@ const CharacterSchema = new Schema({
       weapon: String,
       sheild: String,
       backpack: [],
-      armorClass: Number,
     },
     skills:{
     acrobatics: Number,

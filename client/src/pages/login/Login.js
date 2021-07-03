@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import API from '../../utils/api';
 
 
-const loginFormHandler = async (event) => {
+const loginFormHandler = (event) => {
   event.preventDefault();
   
   //get login form id's
@@ -10,17 +11,11 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    try {
-      const response = await fetch('/api/user/login', {
-          method: 'POST',
-          body: JSON.stringify({ email, password }),
-          headers: { 'Content-Type': 'application/json' },
-        });
-        if (response.ok) {
-          document.location.replace('/'); }
-    } catch(error) {
-      alert(error.message)
-    }
+    API.login({
+      email: email,
+      password: password
+    })
+    .then(document.location.replace('/profile'))
   }
 };
 
