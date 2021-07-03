@@ -4,7 +4,7 @@ import React from 'react'
 
 const LandingPage = () => {
   return (
-    <div className = "container" style = {{ width: "50vw"}}>
+    <div className = "container" style = {{ width: "75vw"}}>
       <div className="jumbotron text-center" style = {{margin: "15vw 0vw 15vw 0vw"}}>
         <h1 className="display-4">The Tavern</h1>
         <p className="lead">Where adventurers begin their quests</p>
