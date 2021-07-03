@@ -31,47 +31,47 @@ function CharacterCreation() {
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
-                <h2>Character Info</h2>
+                <h2>Input Character Info</h2>
                 <CharInfo />
             </TabPanel>
             <TabPanel>
-                <h2>Abilities info</h2>
+                <h2>Input Abilities Scores</h2>
                 <Abilities/>
             </TabPanel>
             <TabPanel>
-                <h2>SaveThrow info</h2>
+                <h2>Select Saving Throws</h2>
                 <SaveThrow />
             </TabPanel>
             <TabPanel>
-                <h2>Skill info</h2>
+                <h2>Select Skills</h2>
                 <Skill />
             </TabPanel>
             <TabPanel>
-                <h2>Personality info</h2>
+                <h2>Input Personality </h2>
                 <Personality />
             </TabPanel>
             <TabPanel>
-                <h2>Vitality info</h2>
+                <h2>Enter Vitality</h2>
                 <Vitality />
             </TabPanel>
             <TabPanel>
-                <h2>Equipment info</h2>
+                <h2>Enter Equipment</h2>
                 <Equipment />
             </TabPanel>
             <TabPanel>
-                <h2>Attacks info</h2>
+                <h2>Enter Attack Info</h2>
                 <Attacks />
             </TabPanel>
             <TabPanel>
-                <h2>Language info</h2>
+                <h2>Enter Languages</h2>
                 <Language />
             </TabPanel>
             <TabPanel>
-                <h2>Features info</h2>
+                <h2>Enter Features</h2>
                 <Features />
             </TabPanel>
             <TabPanel>
-                <h2>Spells info</h2>
+                <h2>Enter Spells</h2>
                 <Spells />
             </TabPanel>
         </Tabs>
