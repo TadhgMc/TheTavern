@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const CharacterInfoAbilities = (ability, info) => {
     const [abilities, setAbilities] = useState({});
     const [charInfo, setCharInfo] = useState({});
 
-    setAbilities(ability);
-    setCharInfo(info);
+    useEffect(()=> {
+        setAbilities(ability);
+        setCharInfo(info);
+    }, [ability,info])
+    
     console.log('abilities: ',abilities);
     console.log('character info: ', charInfo);
 
