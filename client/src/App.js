@@ -19,7 +19,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profile" component={Profile} />
-        <Route path="/charactersheet" component={CharacterSheet} />
+        <Route path="/charactersheet/:id" component={CharacterSheet} />
         <Route exact path="/charactercreater2" component="" />
       </Switch>
     </BrowserRouter>
