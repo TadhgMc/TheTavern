@@ -48,8 +48,6 @@ router.post('/out', (req, res) => {
 router.get('/isLoggedIn', (req, res) => {
   if (req.session.loggedIn === true) {
     res.send(true)
-    /* console.log("req.session.loggedIn", res.json(req.session.loggedIn))
-    res.json(req.session.loggedIn) */
   } else {
     res.send(false)
   }
