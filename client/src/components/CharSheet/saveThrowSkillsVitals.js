@@ -1,15 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-const SaveThrowsSkillsVitals = (saves, Skills, Vitals) => {
-    const [saveThrows, setSaveThrows] = useState();
-    const [skills, setSkills] = useState();
-    const [vitals, setVitals] = useState();
-
-    useEffect(()=> {
-        setSaveThrows(saves);
-        setSkills(skills);
-        setVitals(vitals);
-    },[saves, skills, vitals]);
+const SaveThrowsSkillsVitals = ({saves, Skills, Vitals}) => {
     
     return(
         <>

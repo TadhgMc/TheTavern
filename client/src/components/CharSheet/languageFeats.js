@@ -1,18 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const LanguageFeats = (language, feats) => {
-    const [languages, setLanguages] = useState();
-    const [features, setFeatures] = useState();
+const LanguageFeats = ({language, feats}) => {
     let fullFeats = [];
-    useEffect(()=> {
-        setLanguages(language);
-        setFeatures(feats);
-    },[language, feats])
     
-
     useEffect(()=> {
-        features.map((feat) => {
+        feats.map((feat) => {
             console.log(feat.join('-'));
             axios.get(`https://www.dnd5eapi.co/api/features/${feat.join('-')}`)
                 .then((res) => {
@@ -31,8 +24,8 @@ const LanguageFeats = (language, feats) => {
                     <th>Spoken Languages</th>
                 </thead>
                 <tbody>
-                    {languages.map((language) => {
-                        <td>{language}</td>
+                    {language.map((languag) => {
+                        <td>{languag}</td>
                     })}
                 </tbody>
             </table>

@@ -16,19 +16,19 @@ function CharacterSheet(){
     const charID = useParams();
     console.log('charID:', charID);
 
-    const getChar = (charID) => {
+    useEffect(()=> {
+        const i = 0;
+        console.log('line 22, charData: ', charData);
+    },[charData]);
+
+    useEffect(()=> {
         API.getCharacter(charID.id)
             .then((res) => {
-                console.log('res.data: ',res.data)
+                console.log('28,setting res.data: ', res.data);
                 setCharData(res.data);
             })
             .catch(err => console.log(err));
-        console.log('charData: ',charData);
-    }
-
-    useEffect(()=> {
-        getChar(charID)
-    });
+    },[charID.id]);
     
     return(
         <Tabs>
