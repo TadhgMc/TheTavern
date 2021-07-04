@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const Account = require('../../models/Account');
+/* import alert from 'alert'; */
 
 router.post('/in', async (req, res) => {
     try {
       const dbUserData = await Account.findOne({email: req.body.email});
       if (!dbUserData) {
-        alert("Incorrect Email")
         res
           .status(400)
           .json({ message: 'Incorrect email or password. Please try again!' });
@@ -15,7 +15,6 @@ router.post('/in', async (req, res) => {
       const validPassword = await dbUserData.checkPassword(req.body.password);
   
       if (!validPassword) {
-        alert("Incorrect Password")
         res
           .status(400)
           .json({ message: 'Incorrect email or password. Please try again!' });
