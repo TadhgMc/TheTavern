@@ -46,6 +46,8 @@ export default class Abilities extends React.Component {
 
             <label for="cha"> Charisma </label>
             <input id="cha" type="text" onChange={this.handleChange} value={this.state.abilityScores.cha}></input>
+
+            <button className="btn btn-link" type="button" onClick=""> Save </button>
         </form>
       );
     }

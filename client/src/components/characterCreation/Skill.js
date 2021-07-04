@@ -92,6 +92,8 @@ export default class Skill extends React.Component {
 
             <label for="survival"> Survival </label>
             <input id="survival" type="checkbox" onChange={this.handleChange} value={this.state.skills.survival}></input>
+
+            <button className="btn btn-link" type="button" onClick=""> Save </button>
         </form>
         );
     }

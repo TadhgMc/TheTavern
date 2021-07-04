@@ -58,6 +58,8 @@ export default class Vitality extends React.Component {
 
             <label for="d12">d12 </label>
             <input id="d12>" type="checkbox" onChange={this.handleChange} value={this.state.vitals.d12}></input>
+
+            <button className="btn btn-link" type="button" onClick=""> Save </button>
         </form>  
         )
     }

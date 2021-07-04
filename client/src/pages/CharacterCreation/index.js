@@ -1,17 +1,17 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import CharInfo from "../../components/CharInfo";
-import Abilities from "../../components/Abilities";
-import SaveThrow from "../../components/SaveThrow";
-import Skill from "../../components/Skill";
-import Personality from "../../components/Personality";
-import Vitality from "../../components/Vitality";
-import Equipment from "../../components/Equipment";
-import Attacks from "../../components/Attacks";
-import Language from "../../components/Language";
-import Features from "../../components/Features";
-import Spells from "../../components/Spells";
+import CharInfo from "../../components/characterCreation/CharInfo";
+import Abilities from "../../components/characterCreation/Abilities";
+import SaveThrow from "../../components/characterCreation/SaveThrow";
+import Skill from "../../components/characterCreation/Skill";
+import Personality from "../../components/characterCreation/Personality";
+import Vitality from "../../components/characterCreation/Vitality";
+import Equipment from "../../components/characterCreation/Equipment";
+import Attacks from "../../components/characterCreation/Attacks";
+import Language from "../../components/characterCreation/Language";
+import Features from "../../components/characterCreation/Features";
+import Spells from "../../components/characterCreation/Spells";
 
 
 function CharacterCreation() {

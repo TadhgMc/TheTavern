@@ -36,6 +36,8 @@ export default class Personality extends React.Component {
 
             <label for="flaws"> Flaws </label>
             <input id="flaws" type="text" onChange={this.handleChange} value={this.state.background.flaws}></input>
+
+            <button className="btn btn-link" type="button" onClick=""> Save </button>
         </form>
         )
     }
