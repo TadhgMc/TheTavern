@@ -1,79 +1,70 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useParams } from "react-router-dom";
 import 'react-tabs/style/react-tabs.css';
-import CharInfo from "../../components/characterCreation/CharInfo";
-import Abilities from "../../components/characterCreation/Abilities";
-import SaveThrow from "../../components/characterCreation/SaveThrow";
-import Skill from "../../components/characterCreation/Skill";
-import Personality from "../../components/characterCreation/Personality";
-import Vitality from "../../components/characterCreation/Vitality";
-import Equipment from "../../components/characterCreation/Equipment";
-import Attacks from "../../components/characterCreation/Attacks";
-import Language from "../../components/characterCreation/Language";
-import Features from "../../components/characterCreation/Features";
-import Spells from "../../components/characterCreation/Spells";
+import API from '../../utils/api';
+import CharacterInfoAbilities from '../../components/CharSheet/charInfoAbilities';
+import SaveThrowsSkillsVitals from '../../components/CharSheet/saveThrowSkillsVitals';
+import EquiptAttack from '../../components/CharSheet/equipAttack';
+import LanguageFeats from '../../components/CharSheet/languageFeats';
+import Spells from '../../components/CharSheet/Spells';
 
 
 function CharacterSheet(){
+    const [charData, setCharData] = useState({});
+    const charID = useParams();
+    console.log('charID:', charID);
+
+    useEffect(()=> {
+        const i = 0;
+        console.log('line 22, charData: ', charData);
+    },[charData]);
+
+    useEffect(()=> {
+        API.getCharacter(charID.id)
+            .then((res) => {
+                console.log('28,setting res.data: ', res.data);
+                setCharData(res.data);
+            })
+            .catch(err => console.log(err));
+    },[charID.id]);
+    
     return(
         <Tabs>
             <TabList>
-                <Tab>Character Info</Tab>
-                <Tab>Abilities</Tab>
-                <Tab>SaveThrow</Tab>
-                <Tab>Skill</Tab>
-                <Tab>Personality</Tab>
-                <Tab>Vitality</Tab>
+                <Tab>Character Info & Abilites</Tab>
+                <Tab>Skills & Vitals</Tab>
                 <Tab>Equipment</Tab>
-                <Tab>Attacks</Tab>
-                <Tab>Language</Tab>
-                <Tab>Features</Tab>
+                <Tab>Language & Features</Tab>
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
                 <h2>Character Info</h2>
-                <CharInfo />
-            </TabPanel>
-            <TabPanel>
-                <h2>Abilities info</h2>
-                <Abilities str={10} dex={10} con={10} int={10} wis={10} cha={10}/>
+                <CharacterInfoAbilities
+                ability={charData.abilities}
+                info={charData.charInfo} 
+                />
             </TabPanel>
             <TabPanel>
                 <h2>SaveThrow info</h2>
-                <SaveThrow />
-            </TabPanel>
-            <TabPanel>
-                <h2>Skill info</h2>
-                <Skill />
-            </TabPanel>
-            <TabPanel>
-                <h2>Personality info</h2>
-                <Personality />
-            </TabPanel>
-            <TabPanel>
-                <h2>Vitality info</h2>
-                <Vitality />
+                <SaveThrowsSkillsVitals
+                saves={charData.saveThrows}
+                Skills={charData.skills}
+                Vitals={charData.vitals}
+                />
             </TabPanel>
             <TabPanel>
                 <h2>Equipment info</h2>
-                <Equipment />
-            </TabPanel>
-            <TabPanel>
-                <h2>Attacks info</h2>
-                <Attacks />
+                <EquiptAttack equip={charData.equipment} attck=''/>
             </TabPanel>
             <TabPanel>
                 <h2>Language info</h2>
-                <Language />
-            </TabPanel>
-            <TabPanel>
-                <h2>Features info</h2>
-                <Features />
+                <LanguageFeats languages={charData.languages} feats={charData.features}/>
             </TabPanel>
             <TabPanel>
                 <h2>Spells info</h2>
-                <Spells />
+                <Spells spells={charData.spells}/>
             </TabPanel>
         </Tabs>
     )
