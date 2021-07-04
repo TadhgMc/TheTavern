@@ -1,7 +1,19 @@
 import React from 'react'
+import { useEffect } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
+import API from '../../utils/api';
 
 function Profile() {
+
+  //get all characters by logged in user
+  const getAllCharacters = () => {
+    API.populateCharacters();
+  }
+
+  useEffect(() => {
+    getAllCharacters();
+  }, []);
+
   return (
     <div className="container row">
       <div className="vw-25 text-center">

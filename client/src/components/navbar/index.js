@@ -10,12 +10,10 @@ const Navbar = () => {
   //runs function on page load to check if user is logged in
   useEffect(() => {
     API.checkIfLoggedIn()
-    /* .then(res => console.log("res:", res.data)) */
     .then(res => setIsLoggedIn(res.data))
     .catch(err => console.log("error", err))
     console.log("refreshing page")
   }, [])
-
 
   //onclick function for destroying session
   const logout = () => {
