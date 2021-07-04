@@ -1,10 +1,14 @@
 const router = require('express').Router();
 const Account = require('../../models/Account');
 /* import alert from 'alert'; */
+let currentUserId;
 
 router.post('/in', async (req, res) => {
     try {
-      const dbUserData = await Account.findOne({email: req.body.email});
+      const dbUserData = await Account.findOne({email: req.body.email}, function (err, data) {
+        currentUserId = data;
+        console.log(currentUserId);
+      })
       if (!dbUserData) {
         res
           .status(400)
@@ -21,8 +25,11 @@ router.post('/in', async (req, res) => {
         return;
       }
   
-      req.session.save(() => {
+      req.session.save(async () => {
         req.session.loggedIn = true;
+        currentUserId = await Account.findOne({email: req.body.email}, function (err, data) {
+          console.log(data);
+        })
         console.log("you are now logged in")
         res
           .status(200)
@@ -54,9 +61,9 @@ router.get('/isLoggedIn', (req, res) => {
 });
 
 //get current logged in user id
-router.get('/currentUserId', (req, res) => {
-  if (req.session) {
-    res.send(session)
+router.get('/currentUserId', async (req, res) => {
+  if (req.session.loggedIn) {
+    res.json(currentUserId)
   }
 })
 

@@ -5,13 +5,20 @@ import API from '../../utils/api';
 
 function Profile() {
 
+  //get current userID
+  const userID = () => {
+    API.getUserId()
+    .then(res => API.populateCharacters(res.data._id.toString()))
+    /* .then(res => API.populateCharacters(res.data)) */
+  }
+
   //get all characters by logged in user
   const getAllCharacters = () => {
     API.populateCharacters();
   }
 
   useEffect(() => {
-    getAllCharacters();
+    userID();
   }, []);
 
   return (
