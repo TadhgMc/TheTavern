@@ -1,5 +1,4 @@
 import React from 'react';
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CharInfo from "../../components/characterCreation/CharInfo";
@@ -15,7 +14,7 @@ import Features from "../../components/characterCreation/Features";
 import Spells from "../../components/characterCreation/Spells";
 
 
-function CharacterSheet(){
+function CharacterCreation() {
     return(
         <Tabs>
             <TabList>
@@ -32,51 +31,53 @@ function CharacterSheet(){
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
-                <h2>Character Info</h2>
+                <h2>Input Character Info</h2>
                 <CharInfo />
             </TabPanel>
             <TabPanel>
-                <h2>Abilities info</h2>
-                <Abilities str={10} dex={10} con={10} int={10} wis={10} cha={10}/>
+                <h2>Input Abilities Scores</h2>
+                <Abilities/>
             </TabPanel>
             <TabPanel>
-                <h2>SaveThrow info</h2>
+                <h2>Select Saving Throws</h2>
                 <SaveThrow />
             </TabPanel>
             <TabPanel>
-                <h2>Skill info</h2>
+                <h2>Select Skills</h2>
                 <Skill />
             </TabPanel>
             <TabPanel>
-                <h2>Personality info</h2>
+                <h2>Input Personality </h2>
                 <Personality />
             </TabPanel>
             <TabPanel>
-                <h2>Vitality info</h2>
+                <h2>Enter Vitality</h2>
                 <Vitality />
             </TabPanel>
             <TabPanel>
-                <h2>Equipment info</h2>
+                <h2>Enter Equipment</h2>
                 <Equipment />
             </TabPanel>
             <TabPanel>
-                <h2>Attacks info</h2>
+                <h2>Enter Attack Info</h2>
                 <Attacks />
             </TabPanel>
             <TabPanel>
-                <h2>Language info</h2>
+                <h2>Enter Languages</h2>
                 <Language />
             </TabPanel>
             <TabPanel>
-                <h2>Features info</h2>
+                <h2>Enter Features</h2>
                 <Features />
             </TabPanel>
             <TabPanel>
-                <h2>Spells info</h2>
+                <h2>Enter Spells</h2>
                 <Spells />
             </TabPanel>
         </Tabs>
     )
 }
 
-export default CharacterSheet;
+
+
+export default CharacterCreation
