@@ -3,15 +3,16 @@ import API from '../../utils/api'
 
 const Navbar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   //runs function on page load to check if user is logged in
   useEffect(() => {
     API.checkIfLoggedIn()
+    /* .then(res => console.log("res:", res.data)) */
     .then(res => setIsLoggedIn(res.data))
-    .catch(err => console.log(err))
+    .catch(err => console.log("error", err))
     console.log("refreshing page")
   }, [])
 
