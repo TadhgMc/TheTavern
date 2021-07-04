@@ -5,30 +5,38 @@ import { useParams } from "react-router-dom";
 import 'react-tabs/style/react-tabs.css';
 import API from '../../utils/api';
 import CharacterInfoAbilities from '../../components/CharSheet/charInfoAbilities';
-import saveThrowsSkillsVitals from '../../components/CharSheet/saveThrowSkillsVitals';
+import SaveThrowsSkillsVitals from '../../components/CharSheet/saveThrowSkillsVitals';
+import EquiptAttack from '../../components/CharSheet/equipAttack';
+import LanguageFeats from '../../components/CharSheet/languageFeats';
+import Spells from '../../components/CharSheet/Spells';
 
 
 function CharacterSheet(){
-    const [charData, setCharData] = useState();
+    const [charData, setCharData] = useState({});
     const charID = useParams();
+    console.log('charID:', charID);
 
-    useEffect(() => {
-        API.getCharacter(charID)
-            .then((res) => setCharData(res.body))
+    const getChar = (charID) => {
+        API.getCharacter(charID.id)
+            .then((res) => {
+                console.log('res.data: ',res.data)
+                setCharData(res.data);
+            })
             .catch(err => console.log(err));
-        console.log(charData);
-    },[])
+        console.log('charData: ',charData);
+    }
 
-
+    useEffect(()=> {
+        getChar(charID)
+    });
+    
     return(
         <Tabs>
             <TabList>
-                <Tab>Character Info</Tab>
-                <Tab>SaveThrow</Tab>
+                <Tab>Character Info & Abilites</Tab>
+                <Tab>Skills & Vitals</Tab>
                 <Tab>Equipment</Tab>
-                <Tab>Attacks</Tab>
-                <Tab>Language</Tab>
-                <Tab>Features</Tab>
+                <Tab>Language & Features</Tab>
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
@@ -40,31 +48,23 @@ function CharacterSheet(){
             </TabPanel>
             <TabPanel>
                 <h2>SaveThrow info</h2>
-                <saveThrowsSkillsVitals
-                saves=''
-                skills={charData.skills}
-                vitals={charData.vitals}
+                <SaveThrowsSkillsVitals
+                saves={charData.saveThrows}
+                Skills={charData.skills}
+                Vitals={charData.vitals}
                 />
             </TabPanel>
             <TabPanel>
                 <h2>Equipment info</h2>
-                <Equipment />
-            </TabPanel>
-            <TabPanel>
-                <h2>Attacks info</h2>
-                <Attacks />
+                <EquiptAttack equip={charData.equipment} attck=''/>
             </TabPanel>
             <TabPanel>
                 <h2>Language info</h2>
-                <Language />
-            </TabPanel>
-            <TabPanel>
-                <h2>Features info</h2>
-                <Features />
+                <LanguageFeats languages={charData.languages} feats={charData.features}/>
             </TabPanel>
             <TabPanel>
                 <h2>Spells info</h2>
-                <Spells />
+                <Spells spells={charData.spells}/>
             </TabPanel>
         </Tabs>
     )
