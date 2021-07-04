@@ -7,14 +7,6 @@ const Navbar = () => {
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
-  //checks to see if user is logged in
-  const checkLogIn = () => {
-    console.log('updating state')
-    API.isLoggedIn()
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err))
-  }
-
   //runs function on page load to check if user is logged in
   useEffect(() => {
     API.checkIfLoggedIn()
