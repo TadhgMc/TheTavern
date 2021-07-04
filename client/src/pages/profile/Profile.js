@@ -8,7 +8,7 @@ function Profile() {
         <h1>Profile</h1>
       </div>
       <div className="col text-center">
-        <button type="button" class="btn btn-primary btn-lg">Add Character</button>
+        <button type="button" className="btn btn-primary btn-lg">Add Character</button>
 
       </div>
 

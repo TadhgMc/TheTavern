@@ -3,6 +3,15 @@
   display: flex;
 }
 
+.btn {
+  display: flex;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 #delete-character {
-  color: red;
+  background-color: red;
 }
