@@ -37,5 +37,10 @@ export default {
     },
     logout: function(){
         return axios.post('/api/log/out');
-    }
+    },
+
+    //returns client side true if logged in
+    checkIfLoggedIn: function(){
+      return axios.get('/api/log/isLoggedIn');
+  }
 }

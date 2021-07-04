@@ -13,7 +13,6 @@ import Profile from "./pages/profile/Profile"
 function App() {
   return (
     <BrowserRouter>
-      <Parent />
       <Navbar />
       <Switch>
         <Route exact path="/" component={LandingPage} />
