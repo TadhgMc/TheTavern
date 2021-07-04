@@ -1,18 +1,46 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
-const saveThrowsSkillsVitals = (saves, skills, vitals) => {
+const SaveThrowsSkillsVitals = (saves, Skills, Vitals) => {
     const [saveThrows, setSaveThrows] = useState();
-    const [Skills, setSkills] = useState();
-    const [Vitals, setVitals] = useState();
+    const [skills, setSkills] = useState();
+    const [vitals, setVitals] = useState();
 
-    setSaveThrows(saves);
-    setSkills(skills);
-    setVitals(vitals);
-
+    useEffect(()=> {
+        setSaveThrows(saves);
+        setSkills(skills);
+        setVitals(vitals);
+    },[saves, skills, vitals]);
+    
     return(
         <>
             <h3>save throws</h3>
-
+            {/* <table>
+                <tr>
+                    <th>str:</th>
+                    <td>{saveThrows.str}</td>
+                </tr>
+                <tr>
+                    <th>dex:</th>
+                    <td>{saveThrows.dex}</td>
+                </tr>
+                <tr>
+                    <th>con:</th>
+                    <td>{saveThrows.con}</td>
+                </tr>
+                <tr>
+                    <th>int:</th>
+                    <td>{saveThrows.int}</td>
+                </tr>
+                <tr>
+                    <th>wis:</th>
+                    <td>{saveThrows.wis}</td>
+                </tr>
+                <tr>
+                    <th>cha:</th>
+                    <td>{saveThrows.cha}</td>
+                </tr>
+            </table> */}
+            <h3>Skills</h3>
             <table>
                 <tr>
                     <th>acrobatics</th>
@@ -87,6 +115,7 @@ const saveThrowsSkillsVitals = (saves, skills, vitals) => {
                     <td>{Skills.survival}</td>
                 </tr>
             </table>
+            <h3>Vitals</h3>
             <table>
                 <tr>
                     <th>ac</th>
@@ -118,4 +147,4 @@ const saveThrowsSkillsVitals = (saves, skills, vitals) => {
 
 }
 
-export default saveThrowsSkillsVitals;
+export default SaveThrowsSkillsVitals;
