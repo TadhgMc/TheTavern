@@ -5,9 +5,8 @@ router.post('/in', async (req, res) => {
     try {
       const dbUserData = await Account.findOne({email: req.body.email});
       if (!dbUserData) {
-        alert("username or password didnt match")
+        alert("Incorrect Email")
         res
-          
           .status(400)
           .json({ message: 'Incorrect email or password. Please try again!' });
         return;
@@ -16,6 +15,7 @@ router.post('/in', async (req, res) => {
       const validPassword = await dbUserData.checkPassword(req.body.password);
   
       if (!validPassword) {
+        alert("Incorrect Password")
         res
           .status(400)
           .json({ message: 'Incorrect email or password. Please try again!' });
@@ -24,7 +24,7 @@ router.post('/in', async (req, res) => {
   
       req.session.save(() => {
         req.session.loggedIn = true;
-  
+        console.log("you are now logged in")
         res
           .status(200)
           .json({ user: dbUserData, message: 'You are now logged in!' });
@@ -43,6 +43,15 @@ router.post('/out', (req, res) => {
     } else {
       res.status(404).end();
     }
+});
+
+// returns client side if logged in
+router.get('/isLoggedIn', (req, res) => {
+  if (req.session.loggedIn) {
+    console.log("req.session.loggedIn", req.session.loggedIn)
+    /* return req.session.loggedIn; */
+    res.json(req.session.loggedIn)
+  }
 });
 
 module.exports = router;
