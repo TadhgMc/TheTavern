@@ -53,4 +53,11 @@ router.get('/isLoggedIn', (req, res) => {
   }
 });
 
+//get current logged in user id
+router.get('/currentUserId', (req, res) => {
+  if (req.session) {
+    res.send(session)
+  }
+})
+
 module.exports = router;
