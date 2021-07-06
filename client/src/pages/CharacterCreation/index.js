@@ -59,7 +59,7 @@ function CharacterCreation() {
                 <Equipment />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Attack Info</h2>
+                <h2 className = "text-center mb-4">Enter Weapon Attack Info</h2>
                 <Attacks />
             </TabPanel>
             <TabPanel>
