@@ -46,6 +46,8 @@ export default class SaveThrow extends React.Component{
 
             <label for="cha"> Charisma </label>
             <input id="cha" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.cha}></input>
+
+            <button className="btn btn-link" type="button" onClick=""> Save </button>
             </form>
         )
     }

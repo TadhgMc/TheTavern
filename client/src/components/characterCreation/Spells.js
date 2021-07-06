@@ -29,6 +29,7 @@ export default class Spells extends React.Component {
         this.setState({spells: state})
       };
 
+
       
 
     render() {
@@ -50,7 +51,8 @@ export default class Spells extends React.Component {
                     </div>
                     ))}
                     <button className="btn btn-link" type="button" onClick={() => this.handleAddFields()}> Add </button>
-                </div>    
+                    <button className="btn btn-link" type="button" onClick=""> Save </button>
+                </div>
             </form>    
         )
     }

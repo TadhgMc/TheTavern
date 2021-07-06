@@ -42,6 +42,8 @@ export default class CharInfo extends React.Component {
 
                 <label for="playerName"> Player Name </label>
                 <input id="playerName" type="text" onChange={this.handleChange} value={this.state.information.playerName}></input>
+
+                <button className="btn btn-link" type="button" onClick=""> Save </button>
             </form>
         )        
     }

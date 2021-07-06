@@ -34,8 +34,10 @@ export default class Personality extends React.Component {
             <label for="bonds"> Bonds </label>
             <input id="bonds" type="text" onChange={this.handleChange} value={this.state.background.bonds}></input>
 
-            <label for="personTrait"> Flaws </label>
-            <input id="personTrait" type="text" onChange={this.handleChange} value={this.state.background.flaws}></input>
+            <label for="flaws"> Flaws </label>
+            <input id="flaws" type="text" onChange={this.handleChange} value={this.state.background.flaws}></input>
+
+            <button className="btn btn-link" type="button" onClick=""> Save </button>
         </form>
         )
     }

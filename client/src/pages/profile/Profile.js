@@ -1,14 +1,35 @@
 import React from 'react'
+import { useEffect } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
+import API from '../../utils/api';
 
 function Profile() {
+
+  //get current userID
+  const userID = () => {
+    API.getUserId()
+    .then(res => API.populateCharacters(res.data._id.toString()))
+    /* .then(res => API.populateCharacters(res.data)) */
+  }
+
+  //get all characters by logged in user
+  const getAllCharacters = () => {
+    API.populateCharacters();
+  }
+
+  useEffect(() => {
+    userID();
+  }, []);
+
   return (
     <div className="container-fluid row">
       <div className="vw-25 text-center" style = {{margin: "2vw 0vw 5vw 0vw"}}>
         <h1>Profile</h1>
       </div>
       <div className="col text-center">
-        <button type="button" class="btn btn-primary btn-lg">Add Character</button>
+
+        <button type="button" className="btn btn-primary btn-lg">Add Character</button>
+
       </div>
 
       <hr className="my-4"/>

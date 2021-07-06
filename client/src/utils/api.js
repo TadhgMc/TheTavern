@@ -37,5 +37,15 @@ export default {
     },
     logout: function(){
         return axios.post('/api/log/out');
+    },
+
+    //get id for current logged in user
+    getUserId: function(){
+      return axios.get('/api/log/currentUserId');
+    },
+
+    //returns client side true if logged in
+    checkIfLoggedIn: function(){
+      return axios.get('/api/log/isLoggedIn');
     }
 }
