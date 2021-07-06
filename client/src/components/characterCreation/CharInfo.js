@@ -27,23 +27,38 @@ export default class CharInfo extends React.Component {
     render() {
         console.log(this.state.information.charName)
         return(
-            <form>
-                <label for="charName"> Character Name </label>
-                <input id="charName" type="text" onChange={this.handleChange} value={this.state.information.charName}></input>
+            <form className = "container-fluid row ">
 
-                <label for="race"> Race </label>
-                <input id="race" type="text" onChange={this.handleChange} value={this.state.information.race}></input>
+                <div className = "mb-3 col-sm-12 col-lg-6">
+                    {/* <label for="charName"> Character Name </label> */}
+                    <input id="charName" type="text" placeholder = "Character Name" class= "form-control input-lg" onChange={this.handleChange} value={this.state.information.charName}></input>
+                </div>
 
-                <label for="charClass"> Class </label>
-                <input id="charClass" type="text" onChange={this.handleChange} value={this.state.information.charClass}></input>
+                <div className = "mb-3 col-sm-12 col-lg-6">
+                    {/* <label for="charClass"> Class </label> */}
+                    <input id="charClass" type="text"  placeholder = "Class" class= "form-control input-lg" onChange={this.handleChange} value={this.state.information.charClass}></input>
+                </div>
 
-                <label for="level"> Level </label>
-                <input id="level" type="text" onChange={this.handleChange} value={this.state.information.level}></input>
+                <div className = "mb-3 col-8">
+                    {/* <label for="race"> Race </label> */}
+                    <input id="race" type="text"  placeholder = "Race" class= "form-control input-lg" onChange={this.handleChange} value={this.state.information.race}></input>
+                </div>
 
-                <label for="playerName"> Player Name </label>
-                <input id="playerName" type="text" onChange={this.handleChange} value={this.state.information.playerName}></input>
+                <div className = "mb-3 col-4">
+                    {/* <label for="level"> Level </label> */}
+                    <input id="level" type="text"  placeholder = "Level" class= "form-control input-lg" onChange={this.handleChange} value={this.state.information.level}></input>
+                </div>
 
-                <button className="btn btn-link" type="button" onClick=""> Save </button>
+                <div className = "mb-3 col-12">
+                    {/* <label for="playerName"> Player Name </label> */}
+                    <input id="playerName" type="text"  placeholder = "Player Name" class= "form-control input-lg" onChange={this.handleChange} value={this.state.information.playerName}></input>
+                </div>
+
+                <div>
+                    <div className = "text-center">
+                        <button className="btn btn-danger" type="submit" onClick=""> Save </button>
+                    </div>
+                </div>
             </form>
         )        
     }

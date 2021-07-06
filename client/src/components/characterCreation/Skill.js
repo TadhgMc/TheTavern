@@ -40,60 +40,98 @@ export default class Skill extends React.Component {
     render() {
             console.log(this.state.skills.acrobatics)
         return(
-        <form>
+        <form className = "container-fluid row ">
+
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="acrobatics" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.acrobatics}></input>
             <label for="acrobatics"> Acrobatics </label>
-            <input id="acrobatics" type="checkbox" onChange={this.handleChange} value={this.state.skills.acrobatics}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="animalHandling" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.animalHandling}></input>
             <label for="animalHandling"> Animal Handling </label>
-            <input id="animalHandling" type="checkbox" onChange={this.handleChange} value={this.state.skills.animalHandling}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="arcana" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.arcana}></input>
             <label for="arcana"> Arcana </label>
-            <input id="arcana" type="checkbox" onChange={this.handleChange} value={this.state.skills.arcana}></input>
-            
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="athletics" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.athletics}></input>
             <label for="athletics"> Athletics </label>
-            <input id="athletics" type="checkbox" onChange={this.handleChange} value={this.state.skills.athletics}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="deception" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.deception}></input>
             <label for="deception"> Deception </label>
-            <input id="deception" type="checkbox" onChange={this.handleChange} value={this.state.skills.deception}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="history" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.history}></input>
             <label for="history"> History </label>
-            <input id="history" type="checkbox" onChange={this.handleChange} value={this.state.skills.history}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="insight" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.insight}></input>
             <label for="insight"> Insight </label>
-            <input id="insight" type="checkbox" onChange={this.handleChange} value={this.state.skills.insight}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="intimidation" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.intimidation}></input>
             <label for="intimidation"> Intimidation </label>
-            <input id="intimidation" type="checkbox" onChange={this.handleChange} value={this.state.skills.intimidation}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="medicine" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.medicine}></input>
             <label for="medicine"> Medicine </label>
-            <input id="medicine" type="checkbox" onChange={this.handleChange} value={this.state.skills.medicine}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="nature" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.nature}></input>
             <label for="nature"> Nature </label>
-            <input id="nature" type="checkbox" onChange={this.handleChange} value={this.state.skills.nature}></input>
+            </div>
 
+            <div className = "mb-3 col-sm-12 col-md-3 form-check">
+            <input id="perception" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.perception}></input>
             <label for="perception"> Perception </label>
-            <input id="perception" type="checkbox" onChange={this.handleChange} value={this.state.skills.perception}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="performance" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.performance}></input>
             <label for="performance"> Performance </label>
-            <input id="performance" type="checkbox" onChange={this.handleChange} value={this.state.skills.performance}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="persuasion" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.persuasion}></input>
             <label for="persuasion"> Persuasion </label>
-            <input id="persuasion" type="checkbox" onChange={this.handleChange} value={this.state.skills.persuasion}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="religion" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.religion}></input>
             <label for="religion"> Religion </label>
-            <input id="religion" type="checkbox" onChange={this.handleChange} value={this.state.skills.religion}></input>
+            </div>
 
-            <label for="slightOfHands"> Slight of Hands </label>
-            <input id="slightOfHands" type="checkbox" onChange={this.handleChange} value={this.state.skills.slightOfHands}></input>
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="slightOfHands" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.slightOfHands}></input>
+            <label for="slightOfHands"> Slight of Hand </label>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="stealth" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.stealth}></input>
             <label for="stealth"> Stealth </label>
-            <input id="stealth" type="checkbox" onChange={this.handleChange} value={this.state.skills.stealth}></input>
+            </div>
 
+            <div className = "mb-3 col-xs-12 col-md-3 form-check">
+            <input id="survival" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.skills.survival}></input>
             <label for="survival"> Survival </label>
-            <input id="survival" type="checkbox" onChange={this.handleChange} value={this.state.skills.survival}></input>
+            </div>
 
-            <button className="btn btn-link" type="button" onClick=""> Save </button>
+            <div>
+                <div className = "text-center">
+                    <button className="btn btn-danger" type="button" onClick=""> Save </button>
+                </div>
+            </div>
         </form>
         );
     }

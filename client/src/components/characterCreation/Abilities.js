@@ -28,26 +28,43 @@ export default class Abilities extends React.Component {
     render() {
         console.log(this.state.abilityScores.str)
       return (
-        <form>
-            <label for="str"> Strength </label>
-            <input id="str" type="text" onChange={this.handleChange} value={this.state.abilityScores.str}></input>
+        <form className = "container-fluid row ">
 
-            <label for="dex"> Dexterity </label>
-            <input id="dex" type="text" onChange={this.handleChange} value={this.state.abilityScores.dex}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+              {/* <label for="str"> Strength </label> */}
+              <input id="str" type="text" placeholder = "Strength" class= "form-control input-lg" onChange={this.handleChange} value={this.state.abilityScores.str}></input>
+            </div>
 
-            <label for="con"> Constitution </label>
-            <input id="con" type="text" onChange={this.handleChange} value={this.state.abilityScores.con}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+              {/* <label for="dex"> Dexterity </label> */}
+              <input id="dex" type="text" placeholder = "Dexterity" class= "form-control input-lg" onChange={this.handleChange} value={this.state.abilityScores.dex}></input>
+            </div>
 
-            <label for="int"> Intelligence </label>
-            <input id="int" type="text" onChange={this.handleChange} value={this.state.abilityScores.int}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+              {/* <label for="con"> Constitution </label> */}
+              <input id="con" type="text" placeholder = "Constitution" class= "form-control input-lg" onChange={this.handleChange} value={this.state.abilityScores.con}></input>
+            </div>
 
-            <label for="wis"> Wisdom </label>
-            <input id="wis" type="text" onChange={this.handleChange} value={this.state.abilityScores.wis}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+              {/* <label for="int"> Intelligence </label> */}
+              <input id="int" type="text" placeholder = "Intelligence" class= "form-control input-lg" onChange={this.handleChange} value={this.state.abilityScores.int}></input>
+            </div>
 
-            <label for="cha"> Charisma </label>
-            <input id="cha" type="text" onChange={this.handleChange} value={this.state.abilityScores.cha}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+              {/* <label for="wis"> Wisdom </label> */}
+              <input id="wis" type="text" placeholder = "Wisdom" class= "form-control input-lg" onChange={this.handleChange} value={this.state.abilityScores.wis}></input>
+            </div>
 
-            <button className="btn btn-link" type="button" onClick=""> Save </button>
+            <div className = "mb-3 col-6 col-lg-4">
+              {/* <label for="cha"> Charisma </label> */}
+              <input id="cha" type="text" placeholder = "Charisma" class= "form-control input-lg" onChange={this.handleChange} value={this.state.abilityScores.cha}></input>
+            </div>
+
+            <div>
+              <div className = "text-center">
+                <button className="btn btn-danger" type="button" onClick=""> Save </button>
+              </div>
+            </div>
         </form>
       );
     }

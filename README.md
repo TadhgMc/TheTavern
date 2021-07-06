@@ -23,6 +23,7 @@ In the future we'd like to implement a Dungeon Master view where all the charact
     [MongoDB] (https://www.mongodb.com/)
     [BootStrap] (https://getbootstrap.com/)
     [Express] (https://expressjs.com/)
+    [React-Tabs] (https://www.npmjs.com/package/react-tabs)
 
 ## Market Value
 
