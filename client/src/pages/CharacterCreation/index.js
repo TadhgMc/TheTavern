@@ -71,7 +71,7 @@ function CharacterCreation() {
                 <Features />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Spells</h2>
+                <h2 className = "text-center mb-4">Enter Spells</h2>
                 <Spells />
             </TabPanel>
         </Tabs>
