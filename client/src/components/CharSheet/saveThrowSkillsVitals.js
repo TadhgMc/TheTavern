@@ -5,32 +5,32 @@ const SaveThrowsSkillsVitals = ({saves, Skills, Vitals}) => {
     return(
         <>
             <h3>save throws</h3>
-            {/* <table>
+            <table>
                 <tr>
                     <th>str:</th>
-                    <td>{saveThrows.str}</td>
+                    <td>{saves.str}</td>
                 </tr>
                 <tr>
                     <th>dex:</th>
-                    <td>{saveThrows.dex}</td>
+                    <td>{saves.dex}</td>
                 </tr>
                 <tr>
                     <th>con:</th>
-                    <td>{saveThrows.con}</td>
+                    <td>{saves.con}</td>
                 </tr>
                 <tr>
                     <th>int:</th>
-                    <td>{saveThrows.int}</td>
+                    <td>{saves.int}</td>
                 </tr>
                 <tr>
                     <th>wis:</th>
-                    <td>{saveThrows.wis}</td>
+                    <td>{saves.wis}</td>
                 </tr>
                 <tr>
                     <th>cha:</th>
-                    <td>{saveThrows.cha}</td>
-                </tr>
-            </table> */}
+                    <td>{saves.cha}</td>
+                </tr>s
+            </table>
             <h3>Skills</h3>
             <table>
                 <tr>
