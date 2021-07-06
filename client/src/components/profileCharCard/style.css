@@ -1,6 +1,11 @@
 .card {
-  width: 20rem;
+  /* max-width: 20rem; */
+  max-height: 10rem;
   display: flex;
+}
+
+.card-title{
+  height: 2em;
 }
 
 #delete-character {
