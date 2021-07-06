@@ -35,7 +35,7 @@ function CharacterCreation() {
                 <CharInfo />
             </TabPanel>
             <TabPanel>
-                <h2>Input Abilities Scores</h2>
+                <h2 className = "text-center mb-4">Input Ability Scores</h2>
                 <Abilities/>
             </TabPanel>
             <TabPanel>
