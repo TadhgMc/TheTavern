@@ -63,7 +63,7 @@ function CharacterCreation() {
                 <Attacks />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Languages</h2>
+                <h2 className = "text-center mb-4">Enter Languages</h2>
                 <Language />
             </TabPanel>
             <TabPanel>
