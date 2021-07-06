@@ -152,7 +152,7 @@ module.exports = Character;
     },
     "proficiencies": ["light-armor","killing"],
     "languages": ["common", "dwarvish"],
-    "features": ["dark vision", "iron-hide"],
+    "features": ["darkvision", "lucky"],
     "spells": ["bless", "cure wounds"],
     "notes": []
 }

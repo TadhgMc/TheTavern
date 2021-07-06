@@ -15,17 +15,15 @@ import Spells from '../../components/CharSheet/Spells';
 function CharacterSheet(){
     const charID = useParams();
     console.log('charID:', charID.id);
-    
     const [charData, setCharData] = useState();
     
-        useEffect(()=> {
-            API.getCharacter(charID.id)
-            .then((res) => {
-                console.log('20 , setting res.data: ', res.data);
-                setCharData(res.data);
-            })
-            .catch(err => console.log(err));
-        },[]);
+    useEffect(()=> {
+        API.getCharacter(charID.id)
+        .then((res) => {
+            setCharData(res.data);
+        })
+        .catch(err => console.log(err));
+    },[]);
     
     // get feat/trait info
     let fullFeats = [];
@@ -35,15 +33,12 @@ function CharacterSheet(){
         };
         charData.features.map((feat) => {
             console.log(feat.replace(' ','-'));
-            axios.get(`https://www.dnd5eapi.co/api/traits/${feat.replace(' ','-')}`)
+            axios.get(`https://www.dnd5eapi.co/api/features/${feat.replace(' ','-')}`)
                 .then((res) => {
-                    console.log('line 41, GET res: ', res.data);
                     let {name, desc} = res.data
                     fullFeats.push({name, desc});
-                    // someting like res.body.name && .desc
                 })
         });
-        console.log('full Feats: ',fullFeats);
     }, [charData?.features])
 
     // get spell info
@@ -56,19 +51,15 @@ function CharacterSheet(){
             console.log(spell.replace(' ','-'));
             axios.get(`https://www.dnd5eapi.co/api/spells/${spell.replace(' ','-')}`)
                 .then((res) => {
-                    console.log('line 57, GET res: ', res.data);
                     let {name, desc, higher_level, range} = res.data;
-                    spells.push({name, desc, higher_level, range}); //or setSpells.push ?
-                    // someting like res.body.name && .desc .higher_level .range
+                    spells.push({name, desc, higher_level, range});
                 })
         });
-        console.log('full Spells: ', spells);
     }, [charData?.spells])
 
     if(charData === undefined){
         return <div>Loading!</div>
-    }
-    console.log('charData.spells: ',charData?.spells)
+    };
     
     return(
         <Tabs>
