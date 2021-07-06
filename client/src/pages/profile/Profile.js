@@ -28,7 +28,7 @@ function Profile() {
       </div>
       <div className="col text-center">
 
-        <button type="button" className="btn btn-primary btn-lg">Add Character</button>
+        <a className="btn btn-primary btn-lg " href="/charactercreation" role="button">Add Character</a>
 
       </div>
 
