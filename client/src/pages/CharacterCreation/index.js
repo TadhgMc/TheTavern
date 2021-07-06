@@ -31,7 +31,7 @@ function CharacterCreation() {
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
-                <h2>Input Character Info</h2>
+                <h2 className = "text-center mb-4">Input Character Info</h2>
                 <CharInfo />
             </TabPanel>
             <TabPanel>
