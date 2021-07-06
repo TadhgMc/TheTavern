@@ -43,7 +43,7 @@ function CharacterCreation() {
                 <SaveThrow />
             </TabPanel>
             <TabPanel>
-                <h2>Select Skills</h2>
+                <h2 className = "text-center mb-4">Select Skills</h2>
                 <Skill />
             </TabPanel>
             <TabPanel>
