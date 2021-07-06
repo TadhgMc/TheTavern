@@ -13,18 +13,110 @@ import Spells from '../../components/CharSheet/Spells';
 
 
 function CharacterSheet(){
-    // const getChar = () => {API.getCharacter(charID.id)
-    //         .then((res) => {
-    //             console.log('27 , setting res.data: ', res.data);
-    //             console.log('27 , setting res.data: ', res.data);
-    //             return res.data;
-    //             // console.log('line 228, setCharData: ', setCharData);
-    //         })
-    //         .catch(err => console.log(err));}
     const charID = useParams();
     console.log('charID:', charID.id);
-    const [charData, setCharData] = useState(
-        {"charInfo": {
+    
+    const [charData, setCharData] = useState();
+    
+        useEffect(()=> {
+            API.getCharacter(charID.id)
+            .then((res) => {
+                console.log('20 , setting res.data: ', res.data);
+                setCharData(res.data);
+            })
+            .catch(err => console.log(err));
+        },[]);
+    
+    // get feat/trait info
+    let fullFeats = [];
+    useEffect(()=> {
+        if(charData === undefined){
+            return;
+        };
+        charData.features.map((feat) => {
+            console.log(feat.replace(' ','-'));
+            axios.get(`https://www.dnd5eapi.co/api/traits/${feat.replace(' ','-')}`)
+                .then((res) => {
+                    console.log('line 41, GET res: ', res.data);
+                    let {name, desc} = res.data
+                    fullFeats.push({name, desc});
+                    // someting like res.body.name && .desc
+                })
+        });
+        console.log('full Feats: ',fullFeats);
+    }, [charData?.features])
+
+    // get spell info
+    let spells= [];
+    useEffect(()=> {
+        if(charData === undefined){
+            return;
+        };
+        charData.spells.map((spell) => {
+            console.log(spell.replace(' ','-'));
+            axios.get(`https://www.dnd5eapi.co/api/spells/${spell.replace(' ','-')}`)
+                .then((res) => {
+                    console.log('line 57, GET res: ', res.data);
+                    let {name, desc, higher_level, range} = res.data;
+                    spells.push({name, desc, higher_level, range}); //or setSpells.push ?
+                    // someting like res.body.name && .desc .higher_level .range
+                })
+        });
+        console.log('full Spells: ', spells);
+    }, [charData?.spells])
+
+    if(charData === undefined){
+        return <div>Loading!</div>
+    }
+    console.log('charData.spells: ',charData?.spells)
+    
+    return(
+        <Tabs>
+            <TabList>
+                <Tab>Character Info & Abilites</Tab>
+                <Tab>Skills, Saves & Vitals</Tab>
+                <Tab>Equipment</Tab>
+                <Tab>Languages & Features</Tab>
+                <Tab>Spells</Tab>
+            </TabList>
+            <TabPanel>
+                <h2>Character Info</h2>
+                <CharacterInfoAbilities
+                ability={charData?.abilities}
+                info={charData?.charInfo} 
+                />
+            </TabPanel>
+            <TabPanel>
+                <h2>SaveThrow info</h2>
+                <SaveThrowsSkillsVitals
+                saves={charData?.saveThrows}
+                Skills={charData?.skills}
+                Vitals={charData?.vitals}
+                />
+            </TabPanel>
+            <TabPanel>
+                <h2>Equipment info</h2>
+                <EquiptAttack equip={charData?.equipment}/>
+            </TabPanel>
+            <TabPanel>
+                <h2>Language info</h2>
+                <LanguageFeats
+                language={charData?.languages}
+                feats={fullFeats}
+                />
+            </TabPanel>
+            <TabPanel>
+                <h2>Spells info</h2>
+                <Spells spellList={spells}/>
+            </TabPanel>
+        </Tabs>
+    )
+}
+
+export default CharacterSheet;
+
+/*
+{"charInfo": {
             "charName": "new Test",
             "playerName": "tadhg",
             "sex": "male",
@@ -100,86 +192,4 @@ function CharacterSheet(){
           "spells": ["bless", "cure wounds"],
           "notes": []
       }
-    );
-    useEffect(()=> {
-        console.log('line 104, charData: ', charData);
-    }, [charData,charID]);
-    console.log('line 106, charData: ', charData);
-    
-    let fullFeats = [];
-    useEffect(()=> {
-        charData.features.map((feat) => {
-            console.log(feat.replace(' ','-'));
-            axios.get(`https://www.dnd5eapi.co/api/traits/${feat.replace(' ','-')}`)
-                .then((res) => {
-                    console.log('line 115, GET res: ', res.data);
-                    let {name, desc} = res.data
-                    fullFeats.push({name, desc});
-                    // someting like res.body.name && .desc
-                })
-        });
-        console.log('full Feats: ',fullFeats);
-    }, [charData.features])
-
-    let spells= [];
-    useEffect(()=> {
-        charData.spells.map((spell) => {
-            console.log(spell.replace(' ','-'));
-            axios.get(`https://www.dnd5eapi.co/api/spells/${spell.replace(' ','-')}`)
-                .then((res) => {
-                    console.log('line 130, GET res: ', res.data);
-                    let {name, desc, higher_level, range} = res.data;
-                    spells.push({name, desc, higher_level, range}); //or setSpells.push ?
-                    // someting like res.body.name && .desc .higher_level .range
-                })
-        });
-        console.log('full Spells: ', spells);
-    }, [charData.spells])
-
-
-    console.log('charData.spells: ',charData.spells)
-    
-    return(
-        <Tabs>
-            <TabList>
-                <Tab>Character Info & Abilites</Tab>
-                <Tab>Skills, Saves & Vitals</Tab>
-                <Tab>Equipment</Tab>
-                <Tab>Languages & Features</Tab>
-                <Tab>Spells</Tab>
-            </TabList>
-            <TabPanel>
-                <h2>Character Info</h2>
-                <CharacterInfoAbilities
-                ability={charData.abilities}
-                info={charData.charInfo} 
-                />
-            </TabPanel>
-            <TabPanel>
-                <h2>SaveThrow info</h2>
-                <SaveThrowsSkillsVitals
-                saves={charData.saveThrows}
-                Skills={charData.skills}
-                Vitals={charData.vitals}
-                />
-            </TabPanel>
-            <TabPanel>
-                <h2>Equipment info</h2>
-                <EquiptAttack equip={charData.equipment}/>
-            </TabPanel>
-            <TabPanel>
-                <h2>Language info</h2>
-                <LanguageFeats
-                language={charData.languages}
-                feats={fullFeats}
-                />
-            </TabPanel>
-            <TabPanel>
-                <h2>Spells info</h2>
-                <Spells spellList={spells}/>
-            </TabPanel>
-        </Tabs>
-    )
-}
-
-export default CharacterSheet;
+*/
