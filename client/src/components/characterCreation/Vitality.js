@@ -25,41 +25,68 @@ export default class Vitality extends React.Component {
 
     render() {
         return (
-            <form>
-            <label for="ac"> Armor Class </label>
-            <input id="ac" type="text" onChange={this.handleChange} value={this.state.vitals.ac}></input>
+            <form className = "container-fluid row ">
 
-            <label for="hp"> Hit Points </label>
-            <input id="hp" type="text" onChange={this.handleChange} value={this.state.vitals.hp}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+            {/* <label for="ac"> Armor Class </label> */}
+            <input id="ac" type="text" placeholder = "Armor Class" class= "form-control input-lg" onChange={this.handleChange} value={this.state.vitals.ac}></input>
+            </div>
 
-            <label for="init"> Initiative </label>
-            <input id="init" type="text" onChange={this.handleChange} value={this.state.vitals.init}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+            {/* <label for="hp"> Hit Points </label> */}
+            <input id="hp" type="text" placeholder = "Hit Points" class= "form-control input-lg" onChange={this.handleChange} value={this.state.vitals.hp}></input>
+            </div>
 
-            <label for="speed"> Speed </label>
-            <input id="speed" type="text" onChange={this.handleChange} value={this.state.vitals.speed}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+            {/* <label for="init"> Initiative </label> */}
+            <input id="init" type="text" placeholder = "Initiative" class= "form-control input-lg" onChange={this.handleChange} value={this.state.vitals.init}></input>
+            </div>
 
-            <label for="profBonus"> Proficiency Bonus </label>
-            <input id="profBonus" type="text" onChange={this.handleChange} value={this.state.vitals.profBonus}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+            {/* <label for="speed"> Speed </label> */}
+            <input id="speed" type="text" placeholder = "Speed" class= "form-control input-lg" onChange={this.handleChange} value={this.state.vitals.speed}></input>
+            </div>
 
-            <label for="hitDice"> Number of Hit Dice </label>
-            <input id="hitDice>" type="text" onChange={this.handleChange} value={this.state.vitals.hitDice}></input>
+            <div className = "mb-3 col-6 col-lg-4">
+            {/* <label for="profBonus"> Proficiency Bonus </label> */}
+            <input id="profBonus" type="text" placeholder = "Proficiency" class= "form-control input-lg" onChange={this.handleChange} value={this.state.vitals.profBonus}></input>
+            </div>
 
+            <div className = "mb-3 col-6 col-lg-4">
+            {/* <label for="hitDice"> Number of Hit Dice </label> */}
+            <input id="hitDice>" type="text" placeholder = "# of Hit Dice" class= "form-control input-lg" onChange={this.handleChange} value={this.state.vitals.hitDice}></input>
+            </div>
+
+            <div className = "mb-3 col-3 col-md-2 form-check">
+            <input id="d4>" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.vitals.d4}></input>
             <label for="d4">d4 </label>
-            <input id="d4>" type="checkbox" onChange={this.handleChange} value={this.state.vitals.d4}></input>
+            </div>
 
+            <div className = "mb-3 col-3 col-md-2 form-check">
+            <input id="d6>" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.vitals.d6}></input>
             <label for="d6">d6 </label>
-            <input id="d6>" type="checkbox" onChange={this.handleChange} value={this.state.vitals.d6}></input>
+            </div>
 
+            <div className = "mb-3 col-3 col-md-2 form-check">
+            <input id="d8>" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.vitals.d8}></input>
             <label for="d8">d8 </label>
-            <input id="d8>" type="checkbox" onChange={this.handleChange} value={this.state.vitals.d8}></input>
+            </div>
 
+            <div className = "mb-3 col-3 col-md-2 form-check">
+            <input id="d4>" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.vitals.d10}></input>
             <label for="d10">d10 </label>
-            <input id="d4>" type="checkbox" onChange={this.handleChange} value={this.state.vitals.d10}></input>
+            </div>
 
+            <div className = "mb-3 col-3 col-md-2 form-check">
+            <input id="d12>" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.vitals.d12}></input>
             <label for="d12">d12 </label>
-            <input id="d12>" type="checkbox" onChange={this.handleChange} value={this.state.vitals.d12}></input>
+            </div>
 
-            <button className="btn btn-link" type="button" onClick=""> Save </button>
+            <div>
+              <div className = "text-center">
+              <button className="btn btn-danger" type="button" onClick=""> Save </button>
+              </div>
+            </div>
         </form>  
         )
     }

@@ -51,7 +51,7 @@ function CharacterCreation() {
                 <Personality />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Vitality</h2>
+                <h2 className = "text-center mb-4">Enter Vitality</h2>
                 <Vitality />
             </TabPanel>
             <TabPanel>
