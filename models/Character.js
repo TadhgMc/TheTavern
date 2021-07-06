@@ -9,7 +9,7 @@ const CharacterSchema = new Schema({
       race: String,
       charClass: String,
       level: Number,
-      background: [],
+      background: {},
       alignment: String,
     },
     vitals:{
@@ -87,12 +87,12 @@ module.exports = Character;
       "race": "dwarf",
       "charClass": "barbarian",
       "level": 1,
-      "background": [
-				{"Personality Traits":"blah blah blah"},
-				{"Ideals": "whatver"},
-				{"Bonds": "nothin"},
-				{"Flaws": "where to start?"}
-			],
+      "background": {
+				"PersonalityTraits":"blah blah blah",
+				"Ideals": "whatver",
+				"Bonds": "nothin",
+				"Flaws": "where to start?"
+			},
       "alignment": "evil"
     },
     "vitals":{
@@ -152,7 +152,7 @@ module.exports = Character;
     },
     "proficiencies": ["light-armor","killing"],
     "languages": ["common", "dwarvish"],
-    "features": ["dark vision", "iron-hide"],
+    "features": ["darkvision", "lucky"],
     "spells": ["bless", "cure wounds"],
     "notes": []
 }

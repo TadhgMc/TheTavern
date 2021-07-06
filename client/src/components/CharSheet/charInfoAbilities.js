@@ -1,19 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 const CharacterInfoAbilities = ({ability, info}) => {
     
-    console.log('abilities: ',ability);
-    console.log('character info: ', info);
-
     return(
     <>
-        <h3>{info.charName}</h3>
-        <h3>{info.race}</h3>
-        <h3>{info.charClass}</h3>
-        <h3>{info.level}</h3>
-        <h3>{info.alignment}</h3>
-        <p>{info.sex}</p>
-        <p>{info.background}</p>
+        <h4>Character Name: {info.charName}</h4>
+        <h4>Race: {info.race}</h4>
+        <h4>Class: {info.charClass}</h4>
+        <h4>Level: {info.level}</h4>
+        <h4>Alignment: {info.alignment}</h4>
+        <h4>Sex: {info.sex}</h4>
+        <ol>
+            <li>Personality Traits: {info.background.PersonalityTraits}</li>
+            <li>Ideals: {info.background.Ideals}</li>
+            <li>Bonds: {info.background.Bonds}</li>
+            <li>Flaws: {info.background.Flaws}</li>
+        </ol>
 
         <table>
             <thead>

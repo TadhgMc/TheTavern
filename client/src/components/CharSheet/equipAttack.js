@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
-const EquiptAttack = ({equip, attck}) => {
+const EquiptAttack = ({equip}) => {
 
     return(
     <>
-        <h3>Equipment</h3>
         <table>
             <tr>
                 <th>Equipted Armor:</th>
@@ -20,12 +19,20 @@ const EquiptAttack = ({equip, attck}) => {
                     <td>{equip.sheild}</td>
                 </tr> 
             }
-            <tr>
-                <th>Backpack Contents:</th>
-                {equip.backpack.map((item) => {
-                    <td>{item}</td>
-                })}
-            </tr>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Backpack Contents:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {equip.backpack.map((item) => {
+                        return <td>{item}</td>
+                    })}
+                </tr>
+            </tbody>
         </table>
     </>
     )
