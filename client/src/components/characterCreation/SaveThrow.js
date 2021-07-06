@@ -28,26 +28,43 @@ export default class SaveThrow extends React.Component{
     render() {
         console.log(this.state.savingThrows.str)
         return(
-            <form>
-            <label for="str"> Strength </label>
-            <input id="str" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.str}></input>
+            <form className = "container-fluid row ">
 
-            <label for="dex"> Dexterity </label>
-            <input id="dex" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.dex}></input>
+                <div className = "mb-3 col-6 col-md-3 form-check">
+                    <input id="str" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.savingThrows.str}></input>
+                    <label for="str" > Strength </label>
+                </div>
 
-            <label for="con"> Constitution </label>
-            <input id="con" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.con}></input>
+                <div className = "mb-3 col-6 col-md-3 form-check">
+                    <input id="dex" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.savingThrows.dex}></input>
+                    <label for="dex"> Dexterity </label>
+                </div>
 
-            <label for="int"> Intelligence </label>
-            <input id="int" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.int}></input>
+                <div className = "mb-3 col-6 col-md-3 form-check">
+                    <input id="con" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.savingThrows.con}></input>
+                    <label for="con"> Constitution </label>
+                </div>
 
-            <label for="wis"> Wisdom </label>
-            <input id="wis" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.wis}></input>
+                <div className = "mb-3 col-6 col-md-3 form-check">
+                    <input id="int" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.savingThrows.int}></input>
+                    <label for="int"> Intelligence </label>
+                </div>
 
-            <label for="cha"> Charisma </label>
-            <input id="cha" type="checkbox" onChange={this.handleChange} value={this.state.savingThrows.cha}></input>
+                <div className = "mb-3 col-6 col-md-3 form-check">
+                    <input id="wis" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.savingThrows.wis}></input>
+                    <label for="wis"> Wisdom </label>
+                </div>
 
-            <button className="btn btn-link" type="button" onClick=""> Save </button>
+                <div className = "mb-3 col-6 col-md-3 form-check">
+                    <input id="cha" type="checkbox" className = "me-1" onChange={this.handleChange} value={this.state.savingThrows.cha}></input>
+                    <label for="cha"> Charisma </label>
+                </div>
+
+                <div>
+                    <div className = "text-center">
+                        <button className="btn btn-danger" type="button" onClick=""> Save </button>
+                    </div>
+                </div>
             </form>
         )
     }

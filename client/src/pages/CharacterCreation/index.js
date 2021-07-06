@@ -31,31 +31,31 @@ function CharacterCreation() {
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
-                <h2>Input Character Info</h2>
+                <h2 className = "text-center mb-4">Input Character Info</h2>
                 <CharInfo />
             </TabPanel>
             <TabPanel>
-                <h2>Input Abilities Scores</h2>
+                <h2 className = "text-center mb-4">Input Ability Scores</h2>
                 <Abilities/>
             </TabPanel>
             <TabPanel>
-                <h2>Select Saving Throws</h2>
+                <h2 className = "text-center mb-4">Select Saving Throws</h2>
                 <SaveThrow />
             </TabPanel>
             <TabPanel>
-                <h2>Select Skills</h2>
+                <h2 className = "text-center mb-4">Select Skills</h2>
                 <Skill />
             </TabPanel>
             <TabPanel>
-                <h2>Input Personality </h2>
+                <h2 className = "text-center mb-4">Input Personality </h2>
                 <Personality />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Vitality</h2>
+                <h2 className = "text-center mb-4">Enter Vitality</h2>
                 <Vitality />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Equipment</h2>
+                <h2 className = "text-center mb-4">Enter Equipment</h2>
                 <Equipment />
             </TabPanel>
             <TabPanel>
