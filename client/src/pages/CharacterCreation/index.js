@@ -59,19 +59,19 @@ function CharacterCreation() {
                 <Equipment />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Attack Info</h2>
+                <h2 className = "text-center mb-4">Enter Weapon Attack Info</h2>
                 <Attacks />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Languages</h2>
+                <h2 className = "text-center mb-4">Enter Languages</h2>
                 <Language />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Features</h2>
+                <h2 className = "text-center mb-4">Enter Features</h2>
                 <Features />
             </TabPanel>
             <TabPanel>
-                <h2>Enter Spells</h2>
+                <h2 className = "text-center mb-4">Enter Spells</h2>
                 <Spells />
             </TabPanel>
         </Tabs>

@@ -33,54 +33,73 @@ export default class Attacks extends React.Component {
 
     render() {
         return( 
-            <form>
+            <form className = "container-fluid row">
                 <div className="form-row">
                     {this.state.attacks.map((attacks, index) => (
-                    <div className="form-group col-sm-6">
-                        <label htmlFor="weapon">Weapon</label>
+                    <div className="form-group">
+
+                        <div className = "col-sm-12 col-md-6">
+                        {/* <label htmlFor="weapon">Weapon</label> */}
                         <input
                         type="text"
-                        className="form-control"
+                        className="form-control mb-3"
                         id="weapon"
                         name="weapon"
+                        placeholder = "Weapon Name"
                         onChange = {event => this.handleChange(event, index)}
                         value={attacks.weapon}
                         />
+                        </div>
 
-                        <label htmlFor="damage">Damage Die</label>
+                        <div className = "col-sm-12 col-md-6">
+                        {/* <label htmlFor="damage">Damage Die</label> */}
                         <input
                         type="text"
-                        className="form-control"
+                        className="form-control mb-3"
                         id="damage"
                         name="damage"
+                        placeholder = "Damage Dice"
                         onChange = {event => this.handleChange(event, index)}
                         value={attacks.damage}
                         />
+                        </div>
 
-                        <label htmlFor="range">Range</label>
+                        <div className = "col-sm-12 col-md-6">
+                        {/* <label htmlFor="range">Range</label> */}
                         <input
                         type="text"
-                        className="form-control"
+                        className="form-control mb-3"
                         id="range"
                         name="range"
+                        placeholder = "Range"
                         onChange = {event => this.handleChange(event, index)}
                         value={attacks.range}
                         />
+                        </div>
 
-                        <label htmlFor="type">Damage Type</label>
+                        <div className = "col-sm-12 col-md-6">
+                        {/* <label htmlFor="type">Damage Type</label> */}
                         <input
                         type="text"
-                        className="form-control"
+                        className="form-control mb-3"
                         id="type"
                         name="type"
+                        placeholder = "Damage Type"
                         onChange = {event => this.handleChange(event, index)}
                         value={attacks.type}
                         />
-                    <button className="btn btn-link" type="button" onClick={() => this.handleRemoveFields(index)}> Delete </button>
+                        </div>
+
+                    <button className="btn btn-warning" type="button" onClick={() => this.handleRemoveFields(index)}> Delete </button>
                     </div>
                     ))}
-                    <button className="btn btn-link" type="button" onClick={() => this.handleAddFields()}> Add </button>
-                    <button className="btn btn-link" type="button" onClick=""> Save </button>
+
+                    <div>
+                        <div className = "text-center">
+                            <button className="btn btn-success" type="button" onClick={() => this.handleAddFields()}> Add </button>
+                            <button className="btn btn-danger" type="button" onClick=""> Save </button>
+                        </div>
+                    </div>
                 </div>    
             </form>    
         )

@@ -40,7 +40,7 @@ export default class Equipment extends React.Component {
                         {/* <label htmlFor="equipment">Equipment</label> */}
                         <input
                         type="text"
-                        className="form-control"
+                        className="form-control mb-3"
                         id="equipment"
                         name="equipment"
                         placeholder = "Equipment Name"
