@@ -89,14 +89,14 @@ function CharacterSheet(){
                 <EquiptAttack equip={charData?.equipment}/>
             </TabPanel>
             <TabPanel>
-                <h2>Language info</h2>
+                <h2 className = "text-center mb-4">Language & Feat Information</h2>
                 <LanguageFeats
                 language={charData?.languages}
                 feats={fullFeats}
                 />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Spell info</h2>
+                <h2 className = "text-center mb-4">Spell Information</h2>
                 <Spells spellList={spells}/>
             </TabPanel>
         </Tabs>

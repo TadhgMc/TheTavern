@@ -4,7 +4,7 @@ const LanguageFeats = ({language, feats}) => {
     
     return(
         <>
-            <table>
+            {/* <table>
                 <thead>
                     <th>Spoken Languages</th>
                 </thead>
@@ -19,7 +19,20 @@ const LanguageFeats = ({language, feats}) => {
                 {feats.map((feat) => {
                     return <li>{feat.name}: {feat.desc}</li>
                 })}
-            </ol>
+            </ol> */}
+
+            <div className = "container-fluid">
+            <h3 className = "mb-3">Spoken Languages</h3>
+            <div className = "row-12 card-group">
+            {language.map((languag) => {
+                        return( 
+                            <div className = "col-sm-6 col-md-3">
+                            <h6>{languag}</h6>
+                            </div>
+                        )
+            })}
+            </div>
+            </div>
         </>
     )
 }

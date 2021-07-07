@@ -9,8 +9,7 @@ const Spells = ({spellList}) => {
                 {
                     spellList.map((spell) => {
                         return(
-                            <div className="card mb-3 text-center me-2 col-xs-12 col-md-6">
-                                <div className="card-body">
+                            <div className="card mb-3 text-center me-2 col-xs-12 col-md-6 border border-secondary">                                <div className="card-body">
                                     <h5 className="card-title">{spell.name}</h5>
                                     <h6 className="card-subtitle mb-2 text-muted">Range: {spell.range}</h6>
                                     <ul class="list-group list-group-flush">
