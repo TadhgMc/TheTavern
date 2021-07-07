@@ -9,11 +9,14 @@ function Profile() {
   //get current userID
   const findUserID = () => {
     API.getUserId()
-    .then((res) => {setUserId(res.data._id.toString())})
+    .then((res) => {setUserId(res.data._id.toString())});
+    findUserCharacters();
   }
 
   //populate users characters
-
+  const findUserCharacters = () => {
+    API.populateCharacters(userId)
+  }
 
   /* API.populateCharacters(res.data._id.toString())}) */
 
