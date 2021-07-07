@@ -15,6 +15,7 @@ const CharacterSchema = new Schema({
     vitals:{
       ac: Number,
       hp: {
+        maxHP: Number,
         currentHP: Number,
         hitDie: {
           total: Number,
@@ -98,6 +99,7 @@ module.exports = Character;
     "vitals":{
       "ac": 15,
       "hp": {
+        "maxHP": 25
         "currentHP": 20,
         "hitDie": {
           "total": 2,
