@@ -1,25 +1,45 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
 import API from '../../utils/api';
 
 function Profile() {
+  let [userId, setUserId] = useState('');
 
   //get current userID
-  const userID = () => {
+  const findUserID = () => {
     API.getUserId()
-    .then(res => API.populateCharacters(res.data._id.toString()))
-    /* .then(res => API.populateCharacters(res.data)) */
+    .then((res) => {setUserId(res.data._id.toString())});
+    findUserCharacters();
   }
 
-  //get all characters by logged in user
-  const getAllCharacters = () => {
-    API.populateCharacters();
+  //populate users characters
+  const findUserCharacters = () => {
+    API.populateCharacters(userId)
   }
+
+  //find character id for newly created character
+  const findCurrentChar = () => {
+    let characters;
+    API.populateCharacters(userId)
+    .then((res) => {
+      characters = res.data.Character
+      let characterToUpdate = characters[characters.length -1];
+      document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
+    })
+  }
+
+  /* API.populateCharacters(res.data._id.toString())}) */
 
   useEffect(() => {
-    userID();
+    findUserID();
   }, []);
+
+  const createAndUpdateNewChar = () => {
+    API.createCharacter(userId)
+    findCurrentChar(userId)
+    console.log('creating new character')
+  }
 
   return (
     <div className="container-fluid row">
@@ -28,8 +48,7 @@ function Profile() {
       </div>
       <div className="col text-center">
 
-        <a className="btn btn-primary btn-lg " href="/charactercreation" role="button">Add Character</a>
-
+        <button className="btn btn-primary btn-lg" onClick={createAndUpdateNewChar} href="/charactercreation" >Add Character</button>
       </div>
 
       <hr className="my-4"/>

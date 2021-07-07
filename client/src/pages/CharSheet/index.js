@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
