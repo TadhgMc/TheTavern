@@ -29,7 +29,7 @@ const SaveThrowsSkillsVitals = ({saves, Skills, Vitals}) => {
                 <tr>
                     <th>cha:</th>
                     <td>{saves.cha}</td>
-                </tr>s
+                </tr>
             </table>
             <h3>Skills</h3>
             <table>
@@ -115,6 +115,14 @@ const SaveThrowsSkillsVitals = ({saves, Skills, Vitals}) => {
                 <tr>
                     <th>current hp</th>
                     <td>{Vitals.hp.currentHP}</td>
+                </tr>
+                <tr>
+                    {Vitals.hp.maxHP ? (
+                        <>
+                        <th>max HP</th>
+                        <td>{Vitals.hp.maxHP}</td>
+                        </>
+                    ): <p></p>}
                 </tr>
                 <tr>
                     <th>hit die</th>
