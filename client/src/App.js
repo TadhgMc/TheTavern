@@ -11,6 +11,7 @@ import CharacterCreation from './pages/CharacterCreation'
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,7 +23,7 @@ function App() {
         <Route exact path="/profile" component={Profile} />
         <Route path="/charactersheet/:id" component={CharacterSheet} />
         <Route exact path="/charactercreater2" component="" />
-        <Route exact path="/charactercreation" component={CharacterCreation} />
+        <Route  path="/charactercreation/:id" component={CharacterCreation} />
       </Switch>
     </BrowserRouter>
   );

@@ -12,9 +12,12 @@ import Attacks from "../../components/characterCreation/Attacks";
 import Language from "../../components/characterCreation/Language";
 import Features from "../../components/characterCreation/Features";
 import Spells from "../../components/characterCreation/Spells";
+import {useParams} from "react-router-dom";
 
 
 function CharacterCreation() {
+    const {id} = useParams();
+    console.log(id)
     return(
         <Tabs>
             <TabList>
@@ -31,47 +34,47 @@ function CharacterCreation() {
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
-                <h2 className = "text-center mb-4">Input Character Info</h2>
+                <h2 id={id} className = "text-center mb-4">Input Character Info</h2>
                 <CharInfo />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Input Ability Scores</h2>
+                <h2 id={id} className = "text-center mb-4">Input Ability Scores</h2>
                 <Abilities/>
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Select Saving Throws</h2>
+                <h2 id={id} className = "text-center mb-4">Select Saving Throws</h2>
                 <SaveThrow />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Select Skills</h2>
+                <h2 id={id} className = "text-center mb-4">Select Skills</h2>
                 <Skill />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Input Personality </h2>
+                <h2 id={id} className = "text-center mb-4">Input Personality </h2>
                 <Personality />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Enter Vitality</h2>
+                <h2 id={id} className = "text-center mb-4">Enter Vitality</h2>
                 <Vitality />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Enter Equipment</h2>
+                <h2 id={id} className = "text-center mb-4">Enter Equipment</h2>
                 <Equipment />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Enter Weapon Attack Info</h2>
+                <h2 id={id} className = "text-center mb-4">Enter Weapon Attack Info</h2>
                 <Attacks />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Enter Languages</h2>
+                <h2 id={id} className = "text-center mb-4">Enter Languages</h2>
                 <Language />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Enter Features</h2>
+                <h2 id={id} className = "text-center mb-4">Enter Features</h2>
                 <Features />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Enter Spells</h2>
+                <h2 id={id} className = "text-center mb-4">Enter Spells</h2>
                 <Spells />
             </TabPanel>
         </Tabs>

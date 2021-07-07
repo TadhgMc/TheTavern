@@ -33,7 +33,7 @@ export default class Skill extends React.Component {
     
     handleChange(event) {
         const state = {...this.state.skills, [event.target.id]: event.target.value}
-        this.setState({abilityScores: state})
+        this.setState({skills: state})
         console.log(state)
     }
 
