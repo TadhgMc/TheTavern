@@ -97,7 +97,7 @@ function CharacterSheet(){
                 />
             </TabPanel>
             <TabPanel>
-                <h2>Spells info</h2>
+                <h2 className = "text-center mb-4">Spell info</h2>
                 <Spells spellList={spells}/>
             </TabPanel>
         </Tabs>
