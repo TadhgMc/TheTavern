@@ -1,19 +1,29 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
 import API from '../../utils/api';
 
 function Profile() {
+  let [userId, setUserId] = useState('');
+
   //get current userID
-  const userID = () => {
+  const findUserID = () => {
     API.getUserId()
-    .then(res => {res = API.populateCharacters(res.data._id.toString())})
-    /* .then(res => API.populateCharacters(res.data)) */
+    .then((res) => {setUserId(res.data._id.toString())})
   }
 
+  //populate users characters
+
+
+  /* API.populateCharacters(res.data._id.toString())}) */
+
   useEffect(() => {
-    userID();
+    findUserID();
   }, []);
+
+  const createAndUpdateNewChar = () => {
+    API.createCharacter(userId)
+  }
 
   return (
     <div className="container-fluid row">
