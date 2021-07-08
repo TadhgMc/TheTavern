@@ -39,7 +39,6 @@ const Navbar = () => {
           (<a className="nav-link text-dark" href="/login">Login</a>
           ) 
         }
-        <a className="nav-link text-dark" href="/characters">Characters</a>
         <a className="nav-link text-dark" href="/profile">Profile</a>
       </div>
     </nav>
