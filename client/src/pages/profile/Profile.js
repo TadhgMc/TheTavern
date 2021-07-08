@@ -3,6 +3,85 @@ import { useEffect, useState } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
 import API from '../../utils/api';
 
+const charModel = {
+  charInfo: {
+    charName: "",
+    playerName: "",
+    sex: '',
+    race: '',
+    charClass: '',
+    level: '',
+    background: {
+              PersonalityTraits:"",
+              Ideals: "",
+              Bonds: "",
+              Flaws: ""
+    },
+    alignment: ""
+  },
+  vitals:{
+    ac: 15,
+    hp: {
+      currentHP: 0,
+      hitDie: {
+        total: 0,
+        die: ""
+      }
+    },
+    init: 0,
+    speed: 0,
+    profBonus: 0
+  },
+  abilities: {
+    strength: 12,
+    dexterity: 12,
+    constitution: 12,
+    intelligence: 12,
+    wisdom: 12,
+    charisma: 12
+  },
+  equipment: {
+    armor: "",
+    weapon: "",
+    sheild: "",
+    backpack: []
+  },
+  saveThrows: {
+    str: 0,
+    dex: 0,
+    con: 0,
+    int: 0,
+    wis: 0,
+    cha: 0
+  },
+  skills:{
+    acrobatics: 2,
+    animalhandling: 1,
+    arcana: 1,
+    athletics: 1,
+    deception: 1,
+    history: 2,
+    insight: 3,
+    intimidation: 4,
+    investigation: 3,
+    medicine: 2,
+    nature: 2,
+    perception: 2,
+    performance: 2,
+    persuasion: 2,
+    religion: 2,
+    sleightofhand: 2,
+    stealth: 2,
+    survival: 2
+  },
+  proficiencies: [],
+  languages: [],
+  features: [],
+  spells: [],
+  notes: []
+}
+
+
 function Profile() {
   let [userId, setUserId] = useState('');
   let [userCharacters, setUserCharacters] = useState([]);
@@ -44,14 +123,7 @@ function Profile() {
 
   //creates new character and finds id of new character
   const createAndUpdateNewChar = () => {
-    API.createCharacter(userId, {
-      charInfo: {
-        charName: '',
-        level: '',
-        race: '',
-        charClass: ''
-      }
-    })
+    API.createCharacter(userId, charModel)
     findCurrentChar(userId)
   }
 
@@ -78,7 +150,7 @@ function Profile() {
           console.log(character)
               return (
                 <div className="col my-2">
-                  <ProfileCharCard charId={character._id.toString()} key={character._id.toString()} charName={character.charInfo.charName} level={character.charInfo.level} race={character.charInfo.race} class={character.charInfo.charClass} />
+                  <ProfileCharCard charId={character._id.toString()} charName={character.charInfo.charName} level={character.charInfo.level} race={character.charInfo.race} class={character.charInfo.charClass} />
                 </div>
               )
             })}
