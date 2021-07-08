@@ -1,9 +1,14 @@
 import React from 'react'
 import './style.css'
+import API from '../../utils/api';
+
+const viewChar = (charId) => {
+  API.getCharacter(charId)
+}
 
 function ProfileCharCard(props) {
   return (
-    <div className="card" >
+    <div className="card" key={props.key}>
       <div className="card-body">
         <h5 className="card-title">{props.charName}</h5>
         <h6 className="card-subtitle mb-2 text-muted">Level {props.level}</h6>
