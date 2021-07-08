@@ -3,30 +3,33 @@ import React from 'react'
 
 
 export default class Language extends React.Component {
-    state = {languages: [""]}
-    
-    handleInputChange(event) {
-        const state = this.state.languages
-        state.push(event.target.value)
-        this.setState({languages: state})
+    constructor(props){
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleAddFields = this.handleAddFields.bind(this)
+    this.handleRemoveFields = this.handleRemoveFields.bind(this)
     }
 
     handleChange(event, index) {
-        const state = this.state.languages.slice()
-        state[index] = event.target.value
-        this.setState({languages: state})
+        const {languages} = this.props
+        languages[index] = event.target.value
+        const {setLanguages} = this.props
+        console.log(languages)
+        setLanguages(prevArray => [...languages])
     }
 
     handleAddFields() {
-        const state = this.state.languages
-        state.push("")
-        this.setState({languages: state})
+        const {languages} = this.props
+        languages.push("")
+        const {setLanguages} = this.props
+        setLanguages(prevArray => [...languages])
       };
 
       handleRemoveFields(index) {
-        const state = this.state.languages
-        state.splice(index, 1)
-        this.setState({languages: state})
+        const {languages} = this.props
+        languages.splice(index, 1)
+        const {setLanguages} = this.props
+        setLanguages(prevArray => [...languages])
       };
 
       
@@ -35,7 +38,7 @@ export default class Language extends React.Component {
         return( 
             <form className = "container-fluid row" >
                 <div className="form-row">
-                    {this.state.languages.map((languages, index) => (
+                    {this.props.languages.map((languages, index) => (
                     <div className="form-group mb-3 col-md-6">
                         {/* <label htmlFor="languages">Languages</label> */}
                         <input
@@ -53,7 +56,6 @@ export default class Language extends React.Component {
                     <div>
                         <div className = "text-center">
                         <button className="btn btn-success" type="button" onClick={() => this.handleAddFields()}> Add </button>
-                    <button className="btn btn-danger" type="button" onClick=""> Save </button>  
                         </div>
                     </div>
                 </div>    

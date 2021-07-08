@@ -15,11 +15,14 @@ import Spells from "./Spells";
 // Need to move class to models if this will be saved to DB.
 
 
+
 export default class Parent extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
+
+
     render() {
         const charInfo = <CharInfo/>
         const abilities = <Abilities/>
