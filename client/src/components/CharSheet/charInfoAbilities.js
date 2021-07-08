@@ -4,28 +4,41 @@ const CharacterInfoAbilities = ({ability, info}) => {
     
     return(
     <>
-        <h4>Character Name: {info.charName}</h4>
-        <h4>Race: {info.race}</h4>
-        <h4>Class: {info.charClass}</h4>
-        <h4>Level: {info.level}</h4>
-        <h4>Alignment: {info.alignment}</h4>
-        <h4>Sex: {info.sex}</h4>
-        <ol>
-            <li>Personality Traits: {info.background.PersonalityTraits}</li>
-            <li>Ideals: {info.background.Ideals}</li>
-            <li>Bonds: {info.background.Bonds}</li>
-            <li>Flaws: {info.background.Flaws}</li>
-        </ol>
+        <div className = "container-fluid">
 
+        <div className = "text-center mb-5">
+        <h4>Character Name: {info.charName}</h4>
+        </div>
+
+        <div className = "row mb-4 ">
+            
+            <div className = "col-md-1"></div>
+
+            <div className = "col-6 col-md-6">
+                <h6>Race: {info.race}</h6>
+                <h6>Class: {info.charClass}</h6>       
+                <h6>Level: {info.level}</h6>
+                <h6>Alignment: {info.alignment}</h6>
+                <h6>Sex: {info.sex}</h6>
+            </div>
+                
+            <div className = "col-6 col-md-5">
+                <h6>Personality Traits: {info.background.PersonalityTraits}</h6>
+                <h6>Ideals: {info.background.Ideals}</h6>
+                <h6>Bonds: {info.background.Bonds}</h6>
+                <h6>Flaws: {info.background.Flaws}</h6>
+            </div>
+        
+        </div>
+
+
+        <div className = "row mb-4 text-center">
         <table>
             <thead>
                 <tr>
                     <th>Strength</th>
                     <th>Dexterity</th>
                     <th>Constitution</th>
-                    <th>Intelligence</th>
-                    <th>Wisdom</th>
-                    <th>Charisma</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,12 +46,25 @@ const CharacterInfoAbilities = ({ability, info}) => {
                     <td>{ability.strength}</td>
                     <td>{ability.dexterity}</td>
                     <td>{ability.constitution}</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Intelligence</th>
+                    <th>Wisdom</th>
+                    <th>Charisma</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
                     <td>{ability.intelligence}</td>
                     <td>{ability.wisdom}</td>
                     <td>{ability.charisma}</td>
                 </tr>
             </tbody>
         </table>
+        </div>
+        </div>
     </>
     )
 }
