@@ -64,7 +64,7 @@ function Profile() {
         {userCharacters.map(character => {
               return (
                 <div className="col my-2">
-                  <ProfileCharCard charName={character.name} level={character.level} race={character.race} class={character.class} />
+                  <ProfileCharCard key={character._id.toString()} charName={character.name} level={character.level} race={character.race} class={character.class} />
                 </div>
               )
             })}
