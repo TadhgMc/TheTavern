@@ -15,10 +15,10 @@ class Information {
 }
 
 
+
 export default class CharInfo extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {charInfo: new Information("", "", "", "", "", "", "", "", "", "", "")}
 
         this.handleChange = this.handleChange.bind(this)
     }
@@ -26,45 +26,40 @@ export default class CharInfo extends React.Component {
     
     
     handleChange(event) {
-        const state = {...this.state.charInfo, [event.target.id]: event.target.value}
-            this.setState({charInfo: state})
-            console.log(state)
+        const {setCharInfo} = this.props
+        setCharInfo(charInfo => ({
+            ...charInfo, 
+            [event.target.id]: event.target.value
+        }))
     }
 
     render() {
-        console.log(this.state)
         return(
             <form className = "container-fluid row ">
 
                 <div className = "mb-3 col-sm-12 col-lg-6">
                     {/* <label for="charName"> Character Name </label> */}
-                    <input id="charName" type="text" placeholder = "Character Name" class= "form-control input-lg" onChange={this.handleChange} value={this.state.charInfo.charName}></input>
+                    <input id="charName" type="text" placeholder = "Character Name" class= "form-control input-lg" onChange={this.handleChange} value={this.props.charInfo.charName}></input>
                 </div>
 
                 <div className = "mb-3 col-sm-12 col-lg-6">
                     {/* <label for="charClass"> Class </label> */}
-                    <input id="charClass" type="text"  placeholder = "Class" class= "form-control input-lg" onChange={this.handleChange} value={this.state.charInfo.charClass}></input>
+                    <input id="charClass" type="text"  placeholder = "Class" class= "form-control input-lg" onChange={this.handleChange} value={this.props.charInfo.charClass}></input>
                 </div>
 
                 <div className = "mb-3 col-8">
                     {/* <label for="race"> Race </label> */}
-                    <input id="race" type="text"  placeholder = "Race" class= "form-control input-lg" onChange={this.handleChange} value={this.state.charInfo.race}></input>
+                    <input id="race" type="text"  placeholder = "Race" class= "form-control input-lg" onChange={this.handleChange} value={this.props.charInfo.race}></input>
                 </div>
 
                 <div className = "mb-3 col-4">
-                    {/* <label for="level"> Level </label> */}
-                    <input id="level" type="text"  placeholder = "Level" class= "form-control input-lg" onChange={this.handleChange} value={this.state.charInfo.level}></input>
+                    <label for="level"> Level </label>
+                    <input id="level" type="text"  placeholder = "Level" class= "form-control input-lg" onChange={this.handleChange} value={this.props.charInfo.level}></input>
                 </div>
 
                 <div className = "mb-3 col-12">
                     {/* <label for="playerName"> Player Name </label> */}
-                    <input id="playerName" type="text"  placeholder = "Player Name" class= "form-control input-lg" onChange={this.handleChange} value={this.state.charInfo.playerName}></input>
-                </div>
-
-                <div>
-                    <div className = "text-center">
-                        <button className="btn btn-danger" type="submit" onClick={API.updateCharacter(this.props.id, this.state)}> Save </button>
-                    </div>
+                    <input id="playerName" type="text"  placeholder = "Player Name" class= "form-control input-lg" onChange={this.handleChange} value={this.props.charInfo.playerName}></input>
                 </div>
             </form>
         )        

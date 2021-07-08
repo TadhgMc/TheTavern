@@ -10,16 +10,18 @@ class Background {
 }
 
 export default class Personality extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props)
-        this.state = {background: new Background("", "", "", "",)}
 
         this.handleChange = this.handleChange.bind(this)
     }
     
     handleChange(event) {
-        const state = {...this.state.background, [event.target.id]: event.target.value}
-            this.setState({background:state})
+        const {setBackground} = this.props
+        setBackground(background => ({
+            ...background, 
+            [event.target.id]: event.target.value
+        }))
     }
 
     render() {
@@ -28,28 +30,22 @@ export default class Personality extends React.Component {
 
             <div className = "mb-3 col-sm-12 col-lg-6">
             {/* <label for="personTrait"> Personality Traits </label> */}
-            <input id="personTrait" type="text" placeholder = "Personality Traits" class= "form-control input-lg" onChange={this.handleChange} value={this.state.background.personTrait}></input>
+            <input id="personTrait" type="text" placeholder = "Personality Traits" class= "form-control input-lg" onChange={this.handleChange} value={this.props.background.personTrait}></input>
             </div>
 
             <div className = "mb-3 col-sm-12 col-lg-6">
             {/* <label for="ideals"> Ideals </label> */}
-            <input id="ideals" type="text" placeholder = "Ideals" class= "form-control input-lg" onChange={this.handleChange} value={this.state.background.ideals}></input>
+            <input id="ideals" type="text" placeholder = "Ideals" class= "form-control input-lg" onChange={this.handleChange} value={this.props.background.ideals}></input>
             </div>
 
             <div className = "mb-3 col-sm-12 col-lg-6">
             {/* <label for="bonds"> Bonds </label> */}
-            <input id="bonds" type="text" placeholder = "Bonds" class= "form-control input-lg" onChange={this.handleChange} value={this.state.background.bonds}></input>
+            <input id="bonds" type="text" placeholder = "Bonds" class= "form-control input-lg" onChange={this.handleChange} value={this.props.background.bonds}></input>
             </div>
 
             <div className = "mb-3 col-sm-12 col-lg-6">
             {/* <label for="flaws"> Flaws </label> */}
-            <input id="flaws" type="text" placeholder = "Flaws" class= "form-control input-lg" onChange={this.handleChange} value={this.state.background.flaws}></input>
-            </div>
-
-            <div>
-                <div className = "text-center">
-                    <button className="btn btn-danger" type="button" onClick=""> Save </button>
-                </div>
+            <input id="flaws" type="text" placeholder = "Flaws" class= "form-control input-lg" onChange={this.handleChange} value={this.props.background.flaws}></input>
             </div>
         </form>
         )
