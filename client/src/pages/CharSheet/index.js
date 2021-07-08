@@ -10,7 +10,6 @@ import EquiptAttack from '../../components/CharSheet/equipAttack';
 import LanguageFeats from '../../components/CharSheet/languageFeats';
 import Spells from '../../components/CharSheet/Spells';
 
-
 function CharacterSheet(){
     const charID = useParams();
     console.log('charID:', charID.id);
@@ -77,7 +76,7 @@ function CharacterSheet(){
                 />
             </TabPanel>
             <TabPanel>
-                <h2>SaveThrow info</h2>
+                <h2 className = "text-center mb-4">Vitals</h2>
                 <SaveThrowsSkillsVitals
                 saves={charData?.saveThrows}
                 Skills={charData?.skills}
@@ -89,14 +88,14 @@ function CharacterSheet(){
                 <EquiptAttack equip={charData?.equipment}/>
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Language & Feat Information</h2>
+                <h2 className = "text-center mb-4">Language & Feats</h2>
                 <LanguageFeats
                 language={charData?.languages}
                 feats={fullFeats}
                 />
             </TabPanel>
             <TabPanel>
-                <h2 className = "text-center mb-4">Spell Information</h2>
+                <h2 className = "text-center mb-4">Spells</h2>
                 <Spells spellList={spells}/>
             </TabPanel>
         </Tabs>
