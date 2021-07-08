@@ -69,7 +69,7 @@ function CharacterSheet(){
                 <Tab>Spells</Tab>
             </TabList>
             <TabPanel>
-                <h2>Character Info</h2>
+                <h2 className = "text-center mb-4">Character Information</h2>
                 <CharacterInfoAbilities
                 ability={charData?.abilities}
                 info={charData?.charInfo} 
