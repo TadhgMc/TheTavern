@@ -22,9 +22,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profile" component={Profile} />
         <Route path="/charactersheet/:id" component={CharacterSheet} />
-        <Route exact path="/charactercreater2" component="" />
         <Route  path="/charactercreation/:id" component={CharacterCreation} />
-
       </Switch>
     </BrowserRouter>
   );

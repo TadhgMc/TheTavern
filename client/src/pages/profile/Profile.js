@@ -14,7 +14,7 @@ const charModel = {
     charClass: '',
     level: '',
     background: {
-              PersonalityTraits:"",
+              PersonalityTraits: " ",
               Ideals: "",
               Bonds: "",
               Flaws: ""
@@ -125,6 +125,7 @@ function Profile() {
 
   //creates new character and finds id of new character
   const createAndUpdateNewChar = () => {
+    console.log(charModel)
     API.createCharacter(userId, charModel)
     findCurrentChar(userId)
   }

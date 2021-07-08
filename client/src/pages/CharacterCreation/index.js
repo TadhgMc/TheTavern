@@ -18,16 +18,7 @@ import API from '../../utils/api'
 
 
 function CharacterCreation() {
-    const [charInfo, setCharInfo] = useState({
-        charName: "",
-        playerName: "",
-        sex: "",
-        race: "",
-        charClass: "",
-        level: 0,
-        background: {},
-        alignment: "",
-    });
+    
 
     const [vitals, setVitals] = useState({
         ac: 0,
@@ -85,11 +76,22 @@ function CharacterCreation() {
     })
 
     const [background, setBackground] = useState({
-        personTrait: "",
-        ideals: "",
-        bonds: "",
-        flaws: ""
+        PersonalityTraits: "",
+        Ideals: "",
+        Bonds: "",
+        Flaws: ""
     })
+
+    const [charInfo, setCharInfo] = useState({
+            charName: "",
+            playerName: "",
+            sex: "",
+            race: "",
+            charClass: "",
+            level: 0,
+            background: background,
+            alignment: "",
+    });
 
     const [languages, setLanguages] = useState(
         [""]
@@ -119,7 +121,7 @@ function CharacterCreation() {
             features: features,
             spells: spells,
             attacks: attacks,
-            background: background
+            
             // Don't forget to add each component here
         }
         API.updateCharacter(id, character)
