@@ -24,6 +24,7 @@ function App() {
         <Route path="/charactersheet/:id" component={CharacterSheet} />
         <Route exact path="/charactercreater2" component="" />
         <Route  path="/charactercreation/:id" component={CharacterCreation} />
+
       </Switch>
     </BrowserRouter>
   );
