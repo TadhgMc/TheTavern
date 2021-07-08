@@ -20,7 +20,7 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: MongoStore.create({ mongoUrl: 'mongodb://localhost/session-store' }),
+  store: MongoStore.create({ mongoUrl: process.env.MONGODB_SESS || 'mongodb://localhost/session-store'}),
 };
 
 app.use(session(sess));
