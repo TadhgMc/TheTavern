@@ -44,7 +44,14 @@ function Profile() {
 
   //creates new character and finds id of new character
   const createAndUpdateNewChar = () => {
-    API.createCharacter(userId)
+    API.createCharacter(userId, {
+      charInfo: {
+        charName: '',
+        level: '',
+        race: '',
+        charClass: ''
+      }
+    })
     findCurrentChar(userId)
   }
 
