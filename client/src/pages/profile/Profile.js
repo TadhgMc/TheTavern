@@ -22,7 +22,6 @@ function Profile() {
     console.log("finding characters")
     API.populateCharacters(id)
     .then((res) => {
-      console.log("find characters results", res)
       setUserCharacters(res.data.Character)
     })
   }
@@ -32,10 +31,8 @@ function Profile() {
     API.populateCharacters(userId)
     .then((res) => {
       characters = res.data.Character
-      console.log(characters)
       setUserCharacters(characters);
       let characterToUpdate = characters[characters.length -1];
-      console.log('character to be updated', characterToUpdate)
       document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
     })
   }
@@ -49,7 +46,6 @@ function Profile() {
   const createAndUpdateNewChar = () => {
     API.createCharacter(userId)
     findCurrentChar(userId)
-    console.log('creating new character')
   }
 
   return (
