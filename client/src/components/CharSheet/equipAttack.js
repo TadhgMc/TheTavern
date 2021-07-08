@@ -28,7 +28,7 @@ const EquiptAttack = ({equip}) => {
             </thead>
             <tbody>
                 <tr>
-                    {equip.backpack.map((item) => {
+                    {equip.backpack?.map((item) => {
                         return <td>{item}</td>
                     })}
                 </tr>
