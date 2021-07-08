@@ -39,9 +39,6 @@ const CharacterInfoAbilities = ({ability, info}) => {
                     <th>Strength</th>
                     <th>Dexterity</th>
                     <th>Constitution</th>
-                    {/* <th>Intelligence</th>
-                    <th>Wisdom</th>
-                    <th>Charisma</th> */}
                 </tr>
             </thead>
             <tbody>
@@ -49,16 +46,10 @@ const CharacterInfoAbilities = ({ability, info}) => {
                     <td>{ability.strength}</td>
                     <td>{ability.dexterity}</td>
                     <td>{ability.constitution}</td>
-                    {/* <td>{ability.intelligence}</td>
-                    <td>{ability.wisdom}</td>
-                    <td>{ability.charisma}</td> */}
                 </tr>
             </tbody>
             <thead>
                 <tr>
-                    {/* <th>Strength</th>
-                    <th>Dexterity</th>
-                    <th>Constitution</th> */}
                     <th>Intelligence</th>
                     <th>Wisdom</th>
                     <th>Charisma</th>
@@ -66,9 +57,6 @@ const CharacterInfoAbilities = ({ability, info}) => {
             </thead>
             <tbody>
                 <tr>
-                    {/* <td>{ability.strength}</td>
-                    <td>{ability.dexterity}</td>
-                    <td>{ability.constitution}</td> */}
                     <td>{ability.intelligence}</td>
                     <td>{ability.wisdom}</td>
                     <td>{ability.charisma}</td>
