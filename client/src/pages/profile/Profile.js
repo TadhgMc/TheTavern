@@ -59,7 +59,7 @@ function Profile() {
       </div>
       <div className="col text-center">
 
-        <button className="btn btn-primary btn-lg" onClick={createAndUpdateNewChar}>Add Character</button>
+        <button className="btn btn-primary btn-lg" onClick={() => createAndUpdateNewChar()}>Add Character</button>
       </div>
 
       <hr className="my-4"/>
