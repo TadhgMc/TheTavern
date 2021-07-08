@@ -5,6 +5,7 @@ import API from '../../utils/api';
 
 function Profile() {
   let [userId, setUserId] = useState('');
+  let [userCharacters, setUserCharacters] = useState([]);
 
   //get current userID
   const findUserID = () => {
@@ -23,8 +24,8 @@ function Profile() {
     let characters;
     API.populateCharacters(userId)
     .then((res) => {
-      characters = res.data.Character
-      let characterToUpdate = characters[characters.length -1];
+      setUserCharacters(res.data.Character)
+      let characterToUpdate = userCharacters[userCharacters.length -1];
       document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
     })
   }
@@ -60,44 +61,25 @@ function Profile() {
         {/* single row of 4 character cards */}
         <div class = "row">
 
+        {userCharacters.map(character => {
+              return (
+                <div className="col my-2">
+                  <ProfileCharCard charName={character.name} level={character.level} race={character.race} class={character.class} />
+                </div>
+              )
+            })}
+
           <div className="col my-2">
             <ProfileCharCard charName={"Jim"} level={69} race={'Tiefling'} class={'Rogue'} />
           </div>
 
-          <div className="col my-2">
-            <ProfileCharCard charName={"Charles"} level={420} race={'Halfling'} class={'Bard'} />
-          </div>
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Petris Elmdew"} level={69} race={'Tiefling'} class={'Rogue'} />
-          </div>
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Ganeburk"} level={69} race={'Tiefling'} class={'Rogue'} />
-          </div>
+          
 
         </div>
 
         {/*  */}
 
-        <div class = "row">
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Agaz"} level={69} race={'Tiefling'} class={'Rogue'} />
-          </div>
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Carza Lukkobor"} level={420} race={'Halfling'} class={'Bard'} />
-          </div>
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Olgo"} level={69} race={'Tiefling'} class={'Rogue'} />
-          </div>
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Carza Lukkobor"} level={420} race={'Halfling'} class={'Bard'} />
-          </div>
-        
+        <div class = "row">       
         </div> 
       </div>
     </div>
