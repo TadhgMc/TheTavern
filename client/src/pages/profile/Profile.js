@@ -6,6 +6,7 @@ import API from '../../utils/api';
 function Profile() {
   let [userId, setUserId] = useState('');
   let [userCharacters, setUserCharacters] = useState([]);
+  let characters;
 
   //get current userID
   const findUserID = () => {
@@ -24,8 +25,8 @@ function Profile() {
   const findCurrentChar = () => {
     API.populateCharacters(userId)
     .then((res) => {
-      setUserCharacters(res.data.Character)
-      let characterToUpdate = userCharacters[userCharacters.length -1];
+      characters = res.data.Character
+      let characterToUpdate = characters[characters.length -1];
       console.log('character to be updated', characterToUpdate)
       document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
     })
