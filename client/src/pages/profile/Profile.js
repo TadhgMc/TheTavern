@@ -2,6 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
 import API from '../../utils/api';
+import background from "./profileBanner.png"
+import "./style.css"
 
 const charModel = {
   charInfo: {
@@ -128,15 +130,22 @@ function Profile() {
   }
 
   return (
-    <div className="container-fluid row">
-      <div className="vw-25 text-center" style = {{margin: "2vw 0vw 5vw 0vw"}}>
-        <h1>Profile</h1>
+    <div className="container-fluid row ">
+
+    <div  id = "bannerImg" style = {{
+      backgroundImage:`url(${background})`, 
+      height: '450px'
+    }}>
+
+      <div className="vw-25 text-center" style = {{margin: "15vw 0vw 5vw 0vw"}}>
+        <h1 className = "text-white">Profile</h1>
       </div>
       <div className="col text-center">
 
         <button className="btn btn-primary btn-lg" onClick={() => createAndUpdateNewChar()}>Add Character</button>
       </div>
 
+    </div>
       <hr className="my-4"/>
 
       {/* grid container */}
