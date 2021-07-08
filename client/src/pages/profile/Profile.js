@@ -29,12 +29,12 @@ function Profile() {
     })
   }
 
-  /* API.populateCharacters(res.data._id.toString())}) */
-
+  //finds logged in user and populates characters for that user on page load
   useEffect(() => {
     findUserID();
   }, []);
 
+  //creates new character and finds id of new character
   const createAndUpdateNewChar = () => {
     API.createCharacter(userId)
     findCurrentChar(userId)
