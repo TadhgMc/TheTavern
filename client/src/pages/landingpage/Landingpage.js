@@ -10,7 +10,7 @@ const LandingPage = () => {
         <p className="lead">Where adventurers begin their quests</p>
         <hr className="my-4"/>
           <p></p>
-          <a className="btn btn-primary btn-lg " href="/Login" role="button">Get Started</a>
+          <a className="btn btn-primary btn-lg " href="/login" role="button">Get Started</a>
       </div>
     </div>
   )
