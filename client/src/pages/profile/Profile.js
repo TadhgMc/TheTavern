@@ -11,21 +11,22 @@ function Profile() {
   const findUserID = () => {
     API.getUserId()
     .then((res) => {setUserId(res.data._id.toString())});
-    findUserCharacters();
+    findUserCharacters(userId);
   }
 
   //populate users characters
-  const findUserCharacters = () => {
-    API.populateCharacters(userId)
+  const findUserCharacters = (id) => {
+    console.log("finding characters")
+    API.populateCharacters(id)
   }
 
   //find character id for newly created character
   const findCurrentChar = () => {
-    let characters;
     API.populateCharacters(userId)
     .then((res) => {
       setUserCharacters(res.data.Character)
       let characterToUpdate = userCharacters[userCharacters.length -1];
+      console.log('character to be updated', characterToUpdate)
       document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
     })
   }
@@ -64,16 +65,10 @@ function Profile() {
         {userCharacters.map(character => {
               return (
                 <div className="col my-2">
-                  <ProfileCharCard key={character._id.toString()} charName={character.name} level={character.level} race={character.race} class={character.class} />
+                  <ProfileCharCard charId={character._id.toString()} key={character._id.toString()} charName={character.name} level={character.level} race={character.race} class={character.class} />
                 </div>
               )
             })}
-
-          <div className="col my-2">
-            <ProfileCharCard charName={"Jim"} level={69} race={'Tiefling'} class={'Rogue'} />
-          </div>
-
-          
 
         </div>
 
