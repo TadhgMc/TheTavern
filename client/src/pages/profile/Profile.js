@@ -11,14 +11,20 @@ function Profile() {
   //get current userID
   const findUserID = () => {
     API.getUserId()
-    .then((res) => {setUserId(res.data._id.toString())});
-    findUserCharacters(userId);
+    .then((res) => {
+      setUserId(res.data._id.toString())
+      findUserCharacters(res.data._id.toString())
+    });
   }
 
   //populate users characters
   const findUserCharacters = (id) => {
     console.log("finding characters")
     API.populateCharacters(id)
+    .then((res) => {
+      console.log("find characters results", res)
+      setUserCharacters(res.data.Character)
+    })
   }
 
   //find character id for newly created character
@@ -26,6 +32,8 @@ function Profile() {
     API.populateCharacters(userId)
     .then((res) => {
       characters = res.data.Character
+      console.log(characters)
+      setUserCharacters(characters);
       let characterToUpdate = characters[characters.length -1];
       console.log('character to be updated', characterToUpdate)
       document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
@@ -51,7 +59,7 @@ function Profile() {
       </div>
       <div className="col text-center">
 
-        <button className="btn btn-primary btn-lg" onClick={createAndUpdateNewChar} href="/charactercreation" >Add Character</button>
+        <button className="btn btn-primary btn-lg" onClick={createAndUpdateNewChar}>Add Character</button>
       </div>
 
       <hr className="my-4"/>
@@ -64,9 +72,10 @@ function Profile() {
         <div class = "row">
 
         {userCharacters.map(character => {
+          console.log(character)
               return (
                 <div className="col my-2">
-                  <ProfileCharCard charId={character._id.toString()} key={character._id.toString()} charName={character.name} level={character.level} race={character.race} class={character.class} />
+                  <ProfileCharCard charId={character._id.toString()} key={character._id.toString()} charName={character.charInfo.charName} level={character.charInfo.level} race={character.charInfo.race} class={character.charInfo.charClass} />
                 </div>
               )
             })}
