@@ -85,7 +85,7 @@ function CharacterSheet(){
                 />
             </TabPanel>
             <TabPanel>
-                <h2>Equipment info</h2>
+                <h2 className = "text-center mb-4">Equipment Information</h2>
                 <EquiptAttack equip={charData?.equipment}/>
             </TabPanel>
             <TabPanel>

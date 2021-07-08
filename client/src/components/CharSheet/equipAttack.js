@@ -5,25 +5,36 @@ const EquiptAttack = ({equip}) => {
     return(
     <>
         <table>
+            <div className = "container-fluid">
             <tr>
-                <th>Equipted Armor:</th>
-                <td>{equip.armor}</td>
+                <div className = "mb-3">
+                    <th>Equipped Armor:</th>
+                    <td>{equip.armor}</td>
+                </div>
             </tr>
             <tr>
-                <th>Equipted Weapon:</th>
+                <div className = "mb-3">
+                <th className="mb-3">Equipped Weapon:</th>
                 <td>{equip.weapon}</td>
+                </div>
             </tr>
             { equip.sheild &&
                 <tr>
-                    <th>Equipted Sheild:</th>
-                    <td>{equip.sheild}</td>
+                    <div className = "mb-3">
+                        <th>Equipped Sheild:</th>
+                        <td>{equip.sheild}</td>
+                    </div>
                 </tr> 
             }
+            </div>
         </table>
         <table>
+            <div className = "container-fluid">
             <thead>
                 <tr>
-                    <th>Backpack Contents:</th>
+                    <div className = "mb-3">
+                        <th>Backpack Contents:</th>
+                    </div>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +44,7 @@ const EquiptAttack = ({equip}) => {
                     })}
                 </tr>
             </tbody>
+            </div>
         </table>
     </>
     )
