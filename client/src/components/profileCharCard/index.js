@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import './style.css'
 import API from '../../utils/api';
 
@@ -25,8 +26,8 @@ function ProfileCharCard(props) {
         <h6 className="card-subtitle mb-2 text-muted">Level {props.level}</h6>
         <p className="card-text">{props.race} | {props.class} </p>
         <div className='btn-container'>
-          <button type="button" onClick={() => viewChar(props.charId)} id='view-character' className="btn btn-primary btn-sm">View</button>
-          <button type="button" onClick={() => editChar(props.charId)} id='edit-character' className="btn btn-primary btn-sm">Edit</button>
+          <Link to={`/charactersheet/${props.charId}`} ><button type="button" id='view-character' className="btn btn-primary btn-sm">View</button></Link>
+          <Link to={`/charactercreation/${props.charId}`} ><button type="button" id='edit-character' className="btn btn-primary btn-sm">Edit</button></Link>
           <button type="button" onClick={() =>deleteChar(props.charId)} id='delete-character' className="btn btn-secondary btn-sm">Delete</button>
         </div>
 
