@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import background from "./tavernBackground.png"
 import "./style.css"
 
@@ -17,7 +17,7 @@ const LandingPage = () => {
           <p className="lead text-white">Where adventurers begin their quests</p>
           <hr className="my-4"/>
             <p></p>
-            <a className="btn btn-primary btn-lg " href="/login" role="button">Get Started</a>
+            <Link className="btn btn-primary btn-lg " to="/login" role="button">Get Started</Link>
         </div>
       </div>
     </div>

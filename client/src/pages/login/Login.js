@@ -34,7 +34,7 @@ const Login = () => {
       </div>
       <div className = "text-center">
         <button onClick={loginFormHandler} className="w-50 btn btn-lg btn-primary" type="submit">Login</button>
-        <h3 className="h3 mb-3 fw-normal text-center">Don't Have An Account? Sign Up <a href="/signup" role="button"><Link to='/signup'>Here</Link></a></h3>
+        <h3 className="h3 mb-3 fw-normal text-center">Don't Have An Account? Sign Up <Link to='/signup'>Here</Link></h3>
       </div>
       </div>
 
