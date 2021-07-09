@@ -33,7 +33,7 @@ const Login = () => {
         <label for="floatingPassword">Password</label>
       </div>
       <div className = "text-center">
-        <button onClick={loginFormHandler} className="w-50 btn btn-lg btn-primary" type="submit"><Link to='/profile'>Login</Link></button>
+        <button onClick={loginFormHandler} className="w-50 btn btn-lg btn-primary" type="submit"><Link className='text-dark' to='/profile'>Login</Link></button>
         <h3 className="h3 mb-3 fw-normal text-center">Don't Have An Account? Sign Up <Link to='/signup'>Here</Link></h3>
       </div>
       </div>
