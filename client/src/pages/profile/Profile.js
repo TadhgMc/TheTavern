@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, generatePath } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
 import API from '../../utils/api';
@@ -115,7 +115,7 @@ function Profile() {
       characters = res.data.Character
       setUserCharacters(characters);
       let characterToUpdate = characters[characters.length -1];
-      document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
+      // document.location.replace('/charactercreation/' + characterToUpdate._id.toString())
     })
   }
 
