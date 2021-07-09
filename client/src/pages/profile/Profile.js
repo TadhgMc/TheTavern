@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import ProfileCharCard from '../../components/profileCharCard/index'
 import API from '../../utils/api';
 import background from "./profileBanner.png"
-import "./style.css"
+// import "./style.css"
 
 const charModel = {
   charInfo: {
