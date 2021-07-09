@@ -52,7 +52,7 @@ const SignUp = () => {
         <label for="floatingPassword">Re-Enter Password</label>
       </div>
       <div className = "row mb-3 justify-content-center">
-        <button onClick={signupFormSubmit} className="w-50 btn btn-lg btn-primary" type="submit"><Link to='/login'>Sign Up</Link></button>
+        <button onClick={signupFormSubmit} className="w-50 btn btn-lg btn-primary" type="submit"><Link className='text-dark' to='/login'>Sign Up</Link></button>
       </div>
     </form>
   )
