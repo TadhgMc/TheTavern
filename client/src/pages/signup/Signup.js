@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import API from '../../utils/api';
 
 const signupFormSubmit = (event) => {
@@ -20,7 +21,7 @@ const signupFormSubmit = (event) => {
         password: password,
         email: email
       })
-      .then(document.location.replace('/login'))
+      .then()
       .catch(err => console.log(err));
     } 
     
@@ -51,7 +52,7 @@ const SignUp = () => {
         <label for="floatingPassword">Re-Enter Password</label>
       </div>
       <div className = "row mb-3 justify-content-center">
-        <button onClick={signupFormSubmit} className="w-50 btn btn-lg btn-primary" type="submit">Sign Up</button>
+        <button onClick={signupFormSubmit} className="w-50 btn btn-lg btn-primary" type="submit"><Link to='/login'>Sign Up</Link></button>
       </div>
     </form>
   )
