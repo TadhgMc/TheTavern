@@ -15,7 +15,7 @@ const loginFormHandler = (event) => {
       email: email,
       password: password
     })
-    .then(document.location.replace('/profile'))
+    .then()
   }
 };
 
@@ -33,7 +33,7 @@ const Login = () => {
         <label for="floatingPassword">Password</label>
       </div>
       <div className = "text-center">
-        <button onClick={loginFormHandler} className="w-50 btn btn-lg btn-primary" type="submit">Login</button>
+        <button onClick={loginFormHandler} className="w-50 btn btn-lg btn-primary" type="submit"><Link to='/profile'>Login</Link></button>
         <h3 className="h3 mb-3 fw-normal text-center">Don't Have An Account? Sign Up <Link to='/signup'>Here</Link></h3>
       </div>
       </div>
