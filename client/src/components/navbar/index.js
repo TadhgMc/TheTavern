@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import API from '../../utils/api'
 
 const Navbar = () => {
@@ -23,9 +24,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light rounded p-3">
-      <a className="navbar-brand" href="/">
+      <Link className="navbar-brand" to="/">
         <span className="">The Tavern</span>
-      </a>
+      </Link>
       <button className="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTavern" aria-controls="navbarTavern" aria-expanded={!isNavCollapsed ? true : false} aria-label="Toggle navigation" onClick={handleNavCollapse}>
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -33,13 +34,13 @@ const Navbar = () => {
       <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarTavern">
         {
         isLoggedIn
-        ?(<a className="nav-link text-dark" onClick={logout} href="/login">Logout</a>
+        ?(<Link className="nav-link text-dark" onClick={logout} to="/login">Logout</Link>
           )
         : 
-          (<a className="nav-link text-dark" href="/login">Login</a>
+          (<Link className="nav-link text-dark" to="/login">Login</Link>
           ) 
         }
-        <a className="nav-link text-dark" href="/profile">Profile</a>
+        <Link className="nav-link text-dark" to="/profile">Profile</Link>
       </div>
     </nav>
   );
